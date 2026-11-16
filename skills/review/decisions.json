@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordId": "review-20261113",
+  "policy": "未出现在本文件中、或 status 不为 approved 的候选，一律不得进入 v2 构建。",
+  "decisions": {
+    "libin_sp1_chansi": {
+      "status": "approved",
+      "reviewId": "RV-001b",
+      "reviewer": "战斗系统 + QA 联合复核（平衡复测）",
+      "notes": "v2.0.1 修订并复测通过。原 2.0.0 版本第 1/2 段击退分别为 1.2 / 1.0，实测三段只能命中第 1 段（裸值 132，仅落地 38），与「三段突进掌」定位不符。修订为 0.35 / 0.30，保留第 3 段 5.4 击退用于撞墙。复测：贴身 3 段全中伤害 119（含连段缩放；裸值 132），中距离只能命中前两段（71），符合预期。总帧数、耗气、破坏等级未变，仍满足平衡约束。"
+    },
+    "libin_sp2_zhendi": {
+      "status": "approved",
+      "reviewId": "RV-002",
+      "reviewer": "战斗系统 + QA 联合复核",
+      "notes": "范围冲击，20 帧起手可被跳跃规避，故允许 unblockable；单次 92 伤害、耗气 40，比值 2.3 低于上限但属于高破坏终结技，可接受。destructionLevel=3 是两处地面塌陷来源之一（震地印、回澜棍第二段），配合 90 帧冷却防止连续改变地形。判定框 2.9 宽覆盖站立两侧，需在 QA 中确认不会误伤背后的场景物件，已确认同帧只取最近目标。通过。"
+    },
+    "yaoshan_sp1_huilan": {
+      "status": "approved",
+      "reviewId": "RV-003",
+      "reviewer": "战斗系统 + QA 联合复核",
+      "notes": "两段横扫，总 52 帧，总伤害 104，耗气 30，比值 3.47。第二段击退 7.6 用于把对手推向立柱触发中度破坏，与筄山的距离控制定位一致。判定框 2.6 宽在墙角会造成双段全中，属于设计意图（墙边高收益），但需 QA 记录墙角伤害上限 104 不构成一击必杀。通过。"
+    },
+    "yaoshan_sp2_guichao": {
+      "status": "approved",
+      "reviewId": "RV-004",
+      "reviewer": "战斗系统 + QA 联合复核",
+      "notes": "中远距投掷，14 帧起手、判定框起点 x=3.1，属于中距压制手段，guard=overhead 强制站防，防止对手长期蹲防。伤害 64、耗气 30，比值 2.13。airOk=true 允许空中使用，测试中空中命中后无追打路径，不构成无限连。通过。"
+    },
+    "libin_sp3_yingzong": {
+      "status": "rejected",
+      "reviewId": "RV-005",
+      "reviewer": "战斗系统 + QA 联合复核",
+      "notes": "驳回。三点硬伤：(1) startup=6 却带 destructionLevel=3，直接违反平衡约束第 5 条第 1 款；(2) cancelInto 含自身技能组，形成 A→A 自循环，可无限连；(3) 6 帧无敌起手 + 120 伤害 + 20 耗气，伤害/资源比 6.0 且无风险。建议改为：startup 提高到 18、伤害降到 70、去掉自身取消、destructionLevel 降为 1。修改后需重新走 RV 流程。"
+    }
+  }
+}

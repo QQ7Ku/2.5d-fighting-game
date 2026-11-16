@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "recordId": "gen-20261113-01",
+      "seed": 20261113,
+      "modelVersion": "deepseek-v4.1-flash",
+      "promptId": "prompt.special.v1",
+      "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+      "sourceFile": "skills/candidates/model-output-20261113.json",
+      "generatedAt": "2026-11-13T21:40:00+08:00",
+      "approvedSkills": [
+        "libin_sp1_chansi",
+        "libin_sp2_zhendi",
+        "yaoshan_sp1_huilan",
+        "yaoshan_sp2_guichao"
+      ],
+      "rejectedSkills": [
+        "libin_sp3_yingzong"
+      ],
+      "reproduce": "node skills/scripts/generate.mjs skills/candidates/model-output-20261113.json"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "skillId": "yaoshan_sp2_guichao",
+  "version": "2.0.0",
+  "characterId": "yaoshan",
+  "displayName": {
+    "zh": "掷棍归巢",
+    "pinyin": "zhi gun gui chao"
+  },
+  "category": "special",
+  "input": {
+    "motion": "qcb",
+    "button": "special",
+    "requiresGround": true
+  },
+  "frames": {
+    "startup": 14,
+    "active": 18,
+    "recovery": 30
+  },
+  "hits": [
+    {
+      "id": "h1",
+      "start": 14,
+      "end": 22,
+      "box": {
+        "x": 3.1,
+        "y": 1,
+        "w": 3,
+        "h": 1.1
+      },
+      "damage": 64,
+      "hitstun": 22,
+      "blockstun": 13,
+      "hitstop": 9,
+      "knockback": {
+        "x": 3.4,
+        "y": 0.1
+      },
+      "guard": "overhead",
+      "destructionLevel": 2,
+      "meterGain": 8,
+      "fx": "spark_mid",
+      "sfx": "impact_medium"
+    }
+  ],
+  "movement": [],
+  "animation": {
+    "clip": "atk_special_2",
+    "speed": 1.05,
+    "cancelInto": [],
+    "cancelWindow": [
+      0,
+      0
+    ]
+  },
+  "vfx3d": {
+    "preset": "projectile_ring",
+    "colorHex": "#cfe3d8",
+    "scale": 1.1,
+    "trail": true,
+    "shakeStrength": 0.3
+  },
+  "audio": {
+    "voice": "yaoshan_sp2_voice",
+    "impact": "impact_medium"
+  },
+  "resource": {
+    "meterCost": 30,
+    "cooldownFrames": 75
+  },
+  "compat": {
+    "comboFrom": [
+      "yaoshan_n_l1"
+    ],
+    "comboInto": [],
+    "airOk": true,
+    "tags": [
+      "zoning",
+      "antiTurtle",
+      "return"
+    ]
+  },
+  "provenance": {
+    "generator": "model-assisted",
+    "modelVersion": "deepseek-v4.1-flash",
+    "promptId": "prompt.special.v1",
+    "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+    "seed": 20261113,
+    "inputsHash": "sha256:6c1e53ed59fb06d9bdaddf0a23bdfc44cdb407cbd37b3d15f5ebf892538200ba",
+    "generatedAt": "2026-11-13T21:40:00+08:00",
+    "reviewStatus": "approved",
+    "reviewId": "RV-004",
+    "reviewer": "战斗系统 + QA 联合复核",
+    "balanceNotes": "中远距投掷，14 帧起手、判定框起点 x=3.1，属于中距压制手段，guard=overhead 强制站防，防止对手长期蹲防。伤害 64、耗气 30，比值 2.13。airOk=true 允许空中使用，测试中空中命中后无追打路径，不构成无限连。通过。"
+  }
+}

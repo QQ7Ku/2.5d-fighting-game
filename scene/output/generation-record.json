@@ -1,0 +1,26 @@
+{
+  "recordId": "scene-gen-20261113",
+  "sceneId": "shuangting",
+  "seed": 20261113,
+  "generatorVersion": "scene-gen/1.0.0",
+  "paramsHash": "sha256:d510c3e391a1b61409cb0f890996950087754dcd8db91f8844d926297dd910e0",
+  "outputsHash": "sha256:f3070f44532b03c91842d91064cbd97d303e2a59c09b54379d1a902b4f3f3fd6",
+  "counts": {
+    "ridges": 3,
+    "foliage": 22,
+    "groundPatches": 28,
+    "lanterns": 7,
+    "leaves": 46
+  },
+  "reproduce": "node scene/generator/generate.mjs",
+  "validation": {
+    "passed": true,
+    "violations": [],
+    "checks": [
+      "装饰不进入核心战斗区",
+      "装饰不遮挡判定框通道",
+      "地面贴花透明度 < 0.45 保证可读性",
+      "manual 段未被修改（只读复制）"
+    ]
+  }
+}

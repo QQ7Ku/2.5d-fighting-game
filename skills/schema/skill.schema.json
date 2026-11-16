@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://washangshuang.local/skills/schema/skill.schema.json",
+  "title": "瓦上霜 技能配置 Schema",
+  "description": "Skill 生成模型输出的唯一合法结构。模型只允许输出 JSON，不允许输出可执行代码。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "skillId",
+    "version",
+    "characterId",
+    "displayName",
+    "category",
+    "input",
+    "frames",
+    "hits",
+    "movement",
+    "animation",
+    "vfx3d",
+    "audio",
+    "resource",
+    "compat",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "skillId": { "type": "string", "pattern": "^[a-z0-9_]+$", "minLength": 3 },
+    "version": { "type": "string", "pattern": "^2\\.[0-9]+\\.[0-9]+$" },
+    "characterId": { "enum": ["libin", "yaoshan"] },
+    "displayName": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zh"],
+      "properties": {
+        "zh": { "type": "string", "minLength": 2, "maxLength": 8 },
+        "pinyin": { "type": "string" }
+      }
+    },
+    "category": { "enum": ["special", "normal", "throw", "command"] },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["motion", "button", "requiresGround"],
+      "properties": {
+        "motion": { "enum": ["none", "qcf", "qcb", "dp", "charge", "doubleTap"] },
+        "button": { "enum": ["light", "medium", "heavy", "special"] },
+        "requiresGround": { "type": "boolean" }
+      }
+    },
+    "frames": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startup", "active", "recovery"],
+      "properties": {
+        "startup": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "active": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "recovery": { "type": "integer", "minimum": 1, "maximum": 80 }
+      }
+    },
+    "hits": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "start",
+          "end",
+          "box",
+          "damage",
+          "hitstun",
+          "blockstun",
+          "hitstop",
+          "knockback",
+          "guard",
+          "destructionLevel",
+          "meterGain",
+          "fx",
+          "sfx"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "start": { "type": "integer", "minimum": 1 },
+          "end": { "type": "integer", "minimum": 1 },
+          "box": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "y", "w", "h"],
+            "properties": {
+              "x": { "type": "number", "minimum": -4, "maximum": 6 },
+              "y": { "type": "number", "minimum": 0, "maximum": 3 },
+              "w": { "type": "number", "exclusiveMinimum": 0, "maximum": 6 },
+              "h": { "type": "number", "exclusiveMinimum": 0, "maximum": 4 }
+            }
+          },
+          "damage": { "type": "number", "minimum": 5, "maximum": 160 },
+          "hitstun": { "type": "integer", "minimum": 8, "maximum": 45 },
+          "blockstun": { "type": "integer", "minimum": 4, "maximum": 30 },
+          "hitstop": { "type": "integer", "minimum": 2, "maximum": 16 },
+          "knockback": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "y"],
+            "properties": {
+              "x": { "type": "number", "minimum": -12, "maximum": 12 },
+              "y": { "type": "number", "minimum": -1, "maximum": 6 }
+            }
+          },
+          "guard": { "enum": ["mid", "low", "overhead", "unblockable"] },
+          "destructionLevel": { "type": "integer", "minimum": 0, "maximum": 3 },
+          "meterGain": { "type": "integer", "minimum": 0, "maximum": 20 },
+          "fx": { "type": "string" },
+          "sfx": { "type": "string" }
+        }
+      }
+    },
+    "movement": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["frame", "vx"],
+        "properties": {
+          "frame": { "type": "integer", "minimum": 0, "maximum": 60 },
+          "vx": { "type": "number", "minimum": -0.3, "maximum": 0.3 },
+          "vy": { "type": "number", "minimum": -0.6, "maximum": 0.6 }
+        }
+      }
+    },
+    "animation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clip", "speed", "cancelInto", "cancelWindow"],
+      "properties": {
+        "clip": { "type": "string" },
+        "speed": { "type": "number", "minimum": 0.5, "maximum": 2 },
+        "cancelInto": { "type": "array", "items": { "type": "string" }, "maxItems": 6 },
+        "cancelWindow": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "vfx3d": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preset", "colorHex", "scale", "trail", "shakeStrength"],
+      "properties": {
+        "preset": {
+          "enum": [
+            "palm_rush",
+            "ground_crack",
+            "staff_sweep",
+            "projectile_ring",
+            "impact_flash",
+            "dust_burst"
+          ]
+        },
+        "colorHex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "scale": { "type": "number", "minimum": 0.3, "maximum": 3 },
+        "trail": { "type": "boolean" },
+        "shakeStrength": { "type": "number", "minimum": 0, "maximum": 1.5 }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["voice", "impact"],
+      "properties": {
+        "voice": { "type": "string" },
+        "impact": { "type": "string" }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["meterCost", "cooldownFrames"],
+      "properties": {
+        "meterCost": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "cooldownFrames": { "type": "integer", "minimum": 0, "maximum": 180 }
+      }
+    },
+    "compat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comboFrom", "comboInto", "airOk", "tags"],
+      "properties": {
+        "comboFrom": { "type": "array", "items": { "type": "string" }, "maxItems": 8 },
+        "comboInto": { "type": "array", "items": { "type": "string" }, "maxItems": 8 },
+        "airOk": { "type": "boolean" },
+        "tags": { "type": "array", "items": { "type": "string" }, "maxItems": 6 }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "modelVersion",
+        "promptId",
+        "promptHash",
+        "seed",
+        "inputsHash",
+        "generatedAt",
+        "reviewStatus",
+        "reviewId",
+        "reviewer",
+        "balanceNotes"
+      ],
+      "properties": {
+        "generator": { "enum": ["model-assisted", "hand-authored"] },
+        "modelVersion": { "type": "string" },
+        "promptId": { "type": "string" },
+        "promptHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "seed": { "type": "integer", "minimum": 0 },
+        "inputsHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "generatedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T" },
+        "reviewStatus": { "enum": ["approved", "pending", "rejected"] },
+        "reviewId": { "type": "string" },
+        "reviewer": { "type": "string" },
+        "balanceNotes": { "type": "string", "maxLength": 400 }
+      }
+    }
+  }
+}

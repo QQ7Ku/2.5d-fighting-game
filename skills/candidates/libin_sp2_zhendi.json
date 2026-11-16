@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0.0",
+  "skillId": "libin_sp2_zhendi",
+  "version": "2.0.0",
+  "characterId": "libin",
+  "displayName": {
+    "zh": "震地印",
+    "pinyin": "zhen di yin"
+  },
+  "category": "special",
+  "input": {
+    "motion": "qcb",
+    "button": "special",
+    "requiresGround": true
+  },
+  "frames": {
+    "startup": 20,
+    "active": 6,
+    "recovery": 28
+  },
+  "hits": [
+    {
+      "id": "h1",
+      "start": 20,
+      "end": 25,
+      "box": {
+        "x": 0.05,
+        "y": 0.42,
+        "w": 2.9,
+        "h": 0.9
+      },
+      "damage": 92,
+      "hitstun": 26,
+      "blockstun": 16,
+      "hitstop": 12,
+      "knockback": {
+        "x": 3.2,
+        "y": 0.38
+      },
+      "guard": "unblockable",
+      "destructionLevel": 3,
+      "meterGain": 10,
+      "fx": "ground_crack",
+      "sfx": "impact_heavy"
+    }
+  ],
+  "movement": [
+    {
+      "frame": 18,
+      "vx": 0.02
+    }
+  ],
+  "animation": {
+    "clip": "atk_special_2",
+    "speed": 1,
+    "cancelInto": [],
+    "cancelWindow": [
+      0,
+      0
+    ]
+  },
+  "vfx3d": {
+    "preset": "ground_crack",
+    "colorHex": "#c8a45c",
+    "scale": 1.35,
+    "trail": false,
+    "shakeStrength": 0.95
+  },
+  "audio": {
+    "voice": "libin_sp2_voice",
+    "impact": "collapse"
+  },
+  "resource": {
+    "meterCost": 40,
+    "cooldownFrames": 90
+  },
+  "compat": {
+    "comboFrom": [
+      "libin_sp1_chansi"
+    ],
+    "comboInto": [],
+    "airOk": false,
+    "tags": [
+      "destruction",
+      "guardBreak",
+      "finisher"
+    ]
+  },
+  "provenance": {
+    "generator": "model-assisted",
+    "modelVersion": "deepseek-v4.1-flash",
+    "promptId": "prompt.special.v1",
+    "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+    "seed": 20261113,
+    "inputsHash": "sha256:759aed16e763eb5ae34a5e676ee2678b1c8fbf659cde188297f507271cce9e51",
+    "generatedAt": "2026-11-13T21:40:00+08:00",
+    "reviewStatus": "approved",
+    "reviewId": "RV-002",
+    "reviewer": "战斗系统 + QA 联合复核",
+    "balanceNotes": "范围冲击，20 帧起手可被跳跃规避，故允许 unblockable；单次 92 伤害、耗气 40，比值 2.3 低于上限但属于高破坏终结技，可接受。destructionLevel=3 是两处地面塌陷来源之一（震地印、回澜棍第二段），配合 90 帧冷却防止连续改变地形。判定框 2.9 宽覆盖站立两侧，需在 QA 中确认不会误伤背后的场景物件，已确认同帧只取最近目标。通过。"
+  }
+}

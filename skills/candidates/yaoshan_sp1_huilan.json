@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0.0",
+  "skillId": "yaoshan_sp1_huilan",
+  "version": "2.0.0",
+  "characterId": "yaoshan",
+  "displayName": {
+    "zh": "回澜棍",
+    "pinyin": "hui lan gun"
+  },
+  "category": "special",
+  "input": {
+    "motion": "qcf",
+    "button": "special",
+    "requiresGround": true
+  },
+  "frames": {
+    "startup": 16,
+    "active": 10,
+    "recovery": 26
+  },
+  "hits": [
+    {
+      "id": "h1",
+      "start": 16,
+      "end": 20,
+      "box": {
+        "x": 1.5,
+        "y": 1.25,
+        "w": 2.2,
+        "h": 0.9
+      },
+      "damage": 42,
+      "hitstun": 16,
+      "blockstun": 9,
+      "hitstop": 6,
+      "knockback": {
+        "x": 1.6,
+        "y": 0
+      },
+      "guard": "mid",
+      "destructionLevel": 1,
+      "meterGain": 6,
+      "fx": "spark_small",
+      "sfx": "impact_medium"
+    },
+    {
+      "id": "h2",
+      "start": 21,
+      "end": 25,
+      "box": {
+        "x": 1.7,
+        "y": 1.2,
+        "w": 2.6,
+        "h": 1.1
+      },
+      "damage": 62,
+      "hitstun": 26,
+      "blockstun": 14,
+      "hitstop": 10,
+      "knockback": {
+        "x": 7.6,
+        "y": 0.14
+      },
+      "guard": "mid",
+      "destructionLevel": 3,
+      "meterGain": 9,
+      "fx": "spark_large",
+      "sfx": "impact_heavy"
+    }
+  ],
+  "movement": [
+    {
+      "frame": 10,
+      "vx": 0.11
+    },
+    {
+      "frame": 16,
+      "vx": 0.03
+    }
+  ],
+  "animation": {
+    "clip": "atk_special_1",
+    "speed": 0.95,
+    "cancelInto": [],
+    "cancelWindow": [
+      0,
+      0
+    ]
+  },
+  "vfx3d": {
+    "preset": "staff_sweep",
+    "colorHex": "#9fd0bd",
+    "scale": 1.25,
+    "trail": true,
+    "shakeStrength": 0.42
+  },
+  "audio": {
+    "voice": "yaoshan_sp1_voice",
+    "impact": "impact_heavy"
+  },
+  "resource": {
+    "meterCost": 30,
+    "cooldownFrames": 60
+  },
+  "compat": {
+    "comboFrom": [
+      "yaoshan_n_m1",
+      "yaoshan_n_h1"
+    ],
+    "comboInto": [],
+    "airOk": false,
+    "tags": [
+      "keepOut",
+      "wallSplat",
+      "destruction"
+    ]
+  },
+  "provenance": {
+    "generator": "model-assisted",
+    "modelVersion": "deepseek-v4.1-flash",
+    "promptId": "prompt.special.v1",
+    "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+    "seed": 20261113,
+    "inputsHash": "sha256:1b7a22ff96eb36c06c7750de4753aa1a3b689e703daea5f0ea4b67235ec78fa2",
+    "generatedAt": "2026-11-13T21:40:00+08:00",
+    "reviewStatus": "approved",
+    "reviewId": "RV-003",
+    "reviewer": "战斗系统 + QA 联合复核",
+    "balanceNotes": "两段横扫，总 52 帧，总伤害 104，耗气 30，比值 3.47。第二段击退 7.6 用于把对手推向立柱触发中度破坏，与筄山的距离控制定位一致。判定框 2.6 宽在墙角会造成双段全中，属于设计意图（墙边高收益），但需 QA 记录墙角伤害上限 104 不构成一击必杀。通过。"
+  }
+}

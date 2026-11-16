@@ -1,0 +1,14 @@
+# 超过 GitHub 单文件 100MB 硬限制的源码包
+*.zip
+
+# 可重建产物
+node_modules/
+dist/
+
+# 临时构建日志/截图/门禁脚本，含线上访问凭据链接
+.build-log/
+
+# 编辑器与系统
+.codebuddy/
+.DS_Store
+*.log

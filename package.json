@@ -1,0 +1,24 @@
+{
+  "name": "washangshuang-fighter",
+  "private": true,
+  "version": "2.4.9",
+  "type": "module",
+  "description": "《瓦上霜》v2.0 — 2.5D 网页格斗原型（Three.js）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "skills:validate": "node skills/scripts/validate.mjs",
+    "scene:generate": "node scene/generator/generate.mjs"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.169.0",
+    "ajv": "^8.17.1",
+    "playwright": "^1.58.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#14100e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c8452f'/%3E%3Ctext x='16' y='24' font-size='21' text-anchor='middle' fill='%23efe6d4' font-family='serif'%3E%E9%9C%9C%3C/text%3E%3C/svg%3E"
+    />
+    <title>瓦上霜 v2.4.9</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="stage"></canvas>
+
+      <!-- ===== 战斗 HUD ===== -->
+      <div id="hud" class="hud hidden">
+        <div class="hud-top">
+          <div class="fighter-block left">
+            <div class="fighter-name">李宾</div>
+            <div class="bar-shell">
+              <div class="bar-damage" id="p0-damage"></div>
+              <div class="bar-health" id="p0-health"></div>
+            </div>
+            <div class="meter-shell"><div class="meter" id="p0-meter"></div></div>
+            <div class="combo-tag" id="p0-combo"></div>
+          </div>
+
+          <div class="center-block">
+            <div class="timer" id="timer">99</div>
+            <div class="round-dots" id="round-dots"></div>
+          </div>
+
+          <div class="fighter-block right">
+            <div class="fighter-name">筄山</div>
+            <div class="bar-shell">
+              <div class="bar-damage" id="p1-damage"></div>
+              <div class="bar-health" id="p1-health"></div>
+            </div>
+            <div class="meter-shell"><div class="meter" id="p1-meter"></div></div>
+            <div class="combo-tag" id="p1-combo"></div>
+          </div>
+        </div>
+        <div class="callout" id="callout"></div>
+        <div class="fps" id="fps"></div>
+      </div>
+
+      <!-- ===== 触屏操控 ===== -->
+      <div id="touch" class="touch hidden">
+        <div class="stick-zone" id="stick-zone">
+          <div class="stick-base"><div class="stick-knob" id="stick-knob"></div></div>
+        </div>
+        <div class="touch-actions" id="touch-actions">
+          <button class="tbtn t-light" data-action="light">轻</button>
+          <button class="tbtn t-medium" data-action="medium">中</button>
+          <button class="tbtn t-heavy" data-action="heavy">重</button>
+          <button class="tbtn t-special" data-action="special">必杀</button>
+          <button class="tbtn t-throw" data-action="throw">投</button>
+          <button class="tbtn t-guard" data-action="guard">防</button>
+        </div>
+        <button class="tbtn t-pause" id="touch-pause">‖</button>
+      </div>
+
+      <!-- ===== 加载 ===== -->
+      <div id="overlay-loading" class="overlay">
+        <div class="load-inner">
+          <div class="load-title">瓦上霜</div>
+          <div class="load-sub">霜庭 · 对招</div>
+          <div class="load-bar"><div class="load-fill" id="load-fill"></div></div>
+          <div class="load-label" id="load-label">正在铺瓦…</div>
+          <button class="btn ghost hidden" id="load-retry">重试</button>
+        </div>
+      </div>
+
+      <!-- ===== 主菜单 ===== -->
+      <div id="overlay-menu" class="overlay hidden">
+        <div class="menu-inner">
+          <h1 class="title">瓦上霜<span class="ver">v2.4.9</span></h1>
+          <p class="subtitle">霜庭 · 双人对招</p>
+
+          <div class="menu-group">
+            <div class="group-label">对战模式</div>
+            <div class="seg" id="mode-seg">
+              <button class="seg-btn active" data-mode="ai">对战 AI</button>
+              <button class="seg-btn" data-mode="local">本地双人</button>
+            </div>
+          </div>
+
+          <div class="menu-group" id="difficulty-group">
+            <div class="group-label">AI 难度</div>
+            <div class="seg" id="diff-seg">
+              <button class="seg-btn" data-diff="easy">新手</button>
+              <button class="seg-btn active" data-diff="normal">普通</button>
+              <button class="seg-btn" data-diff="hard">高手</button>
+            </div>
+          </div>
+
+          <div class="menu-group">
+            <div class="group-label">画质档位</div>
+            <div class="seg" id="quality-seg">
+              <button class="seg-btn active" data-quality="auto">自动</button>
+              <button class="seg-btn" data-quality="high">高</button>
+              <button class="seg-btn" data-quality="medium">中</button>
+              <button class="seg-btn" data-quality="low">低</button>
+            </div>
+          </div>
+
+          <button class="btn primary" id="btn-start">开 战</button>
+          <button class="btn ghost" id="btn-help">操作说明</button>
+          <button class="btn ghost" id="btn-settings">设置</button>
+          <button class="btn ghost" id="btn-fullscreen">全屏</button>
+          <div class="hint" id="device-hint"></div>
+        </div>
+      </div>
+
+      <!-- ===== 设置 ===== -->
+      <div id="overlay-settings" class="overlay hidden">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>设置</h2>
+            <button class="panel-close" id="btn-close-settings-x" aria-label="关闭设置">×</button>
+          </div>
+
+          <div class="row">
+            <label>按钮大小</label>
+            <input type="range" id="set-btn-size" min="0.7" max="1.5" step="0.05" value="1" />
+            <span class="val" id="val-btn-size">100%</span>
+          </div>
+          <div class="row">
+            <label>按钮透明度</label>
+            <input type="range" id="set-btn-opacity" min="0.25" max="1" step="0.05" value="0.72" />
+            <span class="val" id="val-btn-opacity">72%</span>
+          </div>
+          <div class="row">
+            <label>按键布局</label>
+            <select id="set-layout">
+              <option value="standard">标准（左摇杆右六键）</option>
+              <option value="compact">紧凑（键距更近）</option>
+              <option value="lefty">左手（左右镜像）</option>
+            </select>
+          </div>
+          <div class="row">
+            <label>主音量</label>
+            <input type="range" id="set-volume" min="0" max="1" step="0.05" value="0.8" />
+            <span class="val" id="val-volume">80%</span>
+          </div>
+
+          <div class="sub-h">键盘映射（点击后按新键）</div>
+          <div class="keys" id="key-map"></div>
+
+          <div class="row">
+            <button class="btn ghost" id="btn-reset-keys">恢复默认</button>
+            <button class="btn primary" id="btn-close-settings">完成</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 帮助 ===== -->
+      <div id="overlay-help" class="overlay hidden">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>操作说明</h2>
+            <button class="panel-close" id="btn-close-help-x" aria-label="关闭操作说明">×</button>
+          </div>
+          <div class="help-cols">
+            <div>
+              <h3>键盘 · 桌面</h3>
+              <ul>
+                <li><b>1P</b>　A / D 移动，W 跳跃，S 下蹲</li>
+                <li><b>1P 攻击</b>　J 轻 · K 中 · L 重</li>
+                <li><b>1P</b>　U 必杀 · I 投技 · 空格 防御</li>
+                <li><b>2P</b>　← → 移动，↑ 跳跃，↓ 下蹲</li>
+                <li><b>2P 攻击</b>　小键盘 4 / 5 / 6，7 必杀，8 投，9 防</li>
+                <li>攻击键可同时用作必杀指令的最后一击</li>
+              </ul>
+            </div>
+            <div>
+              <h3>手机 · 横屏</h3>
+              <ul>
+                <li>左侧虚拟摇杆：左右移动，上推跳跃，下按防御</li>
+                <li>右侧六键：轻 / 中 / 重 / 必杀 / 投 / 防</li>
+                <li>必杀：摇杆摇 ↓→ 后按「必杀」，或直接按「必杀」触发简版</li>
+                <li>投技：贴身时按「投」</li>
+                <li>支持多点触控，按钮大小与透明度可在设置中调</li>
+              </ul>
+            </div>
+          </div>
+          <div class="help-cols">
+            <div>
+              <h3>系统</h3>
+              <ul>
+                <li>三局两胜，每局 99 秒</li>
+                <li>重击、必杀、投技撞墙可破坏场景</li>
+                <li>场景三级破坏：装饰碎裂 → 立柱断裂 → 地面塌陷</li>
+                <li>破坏后会改变战斗空间，注意地形</li>
+              </ul>
+            </div>
+            <div>
+              <h3>浏览器</h3>
+              <ul>
+                <li>桌面：Chrome / Edge 最新版（推荐），Firefox / Safari 基础可用</li>
+                <li>移动：Android Chrome、iOS Safari 横屏</li>
+                <li>手柄：Web Gamepad 标准映射（可选增强）</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn primary" id="btn-close-help">明白了</button>
+        </div>
+      </div>
+
+      <!-- ===== 结算 ===== -->
+      <div id="overlay-result" class="overlay hidden">
+        <div class="menu-inner narrow">
+          <h1 class="title small" id="result-title">胜</h1>
+          <p class="subtitle" id="result-sub"></p>
+          <button class="btn primary" id="btn-again">再战</button>
+          <button class="btn ghost" id="btn-back-menu">返回菜单</button>
+        </div>
+      </div>
+
+      <!-- ===== 暂停 ===== -->
+      <div id="overlay-pause" class="overlay hidden">
+        <div class="panel small">
+          <h2>暂停</h2>
+          <button class="btn primary" id="btn-resume">继续</button>
+          <button class="btn ghost" id="btn-quit">退出对战</button>
+        </div>
+      </div>
+
+      <!-- ===== 横屏提示 ===== -->
+      <div id="rotate-hint" class="overlay hidden">
+        <div class="rotate-inner">
+          <div class="phone"></div>
+          <p>请横屏使用</p>
+          <span>旋转手机以获得完整操作空间</span>
+        </div>
+      </div>
+
+      <div id="toast" class="toast"></div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

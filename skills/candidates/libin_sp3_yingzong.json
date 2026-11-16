@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "skillId": "libin_sp3_yingzong",
+  "version": "2.0.0",
+  "characterId": "libin",
+  "displayName": {
+    "zh": "影踪掌",
+    "pinyin": "ying zong zhang"
+  },
+  "category": "special",
+  "input": {
+    "motion": "dp",
+    "button": "special",
+    "requiresGround": false
+  },
+  "frames": {
+    "startup": 6,
+    "active": 18,
+    "recovery": 8
+  },
+  "hits": [
+    {
+      "id": "h1",
+      "start": 6,
+      "end": 24,
+      "box": {
+        "x": 0.9,
+        "y": 1.1,
+        "w": 2,
+        "h": 1.4
+      },
+      "damage": 120,
+      "hitstun": 30,
+      "blockstun": 18,
+      "hitstop": 12,
+      "knockback": {
+        "x": 6,
+        "y": 0.3
+      },
+      "guard": "unblockable",
+      "destructionLevel": 3,
+      "meterGain": 12,
+      "fx": "spark_large",
+      "sfx": "impact_heavy"
+    }
+  ],
+  "movement": [
+    {
+      "frame": 6,
+      "vx": 0.26
+    }
+  ],
+  "animation": {
+    "clip": "atk_special_1",
+    "speed": 1.4,
+    "cancelInto": [
+      "libin_sp1_chansi"
+    ],
+    "cancelWindow": [
+      18,
+      26
+    ]
+  },
+  "vfx3d": {
+    "preset": "impact_flash",
+    "colorHex": "#fff2d6",
+    "scale": 1.6,
+    "trail": true,
+    "shakeStrength": 0.8
+  },
+  "audio": {
+    "voice": "libin_sp3_voice",
+    "impact": "impact_heavy"
+  },
+  "resource": {
+    "meterCost": 20,
+    "cooldownFrames": 20
+  },
+  "compat": {
+    "comboFrom": [
+      "libin_n_l1"
+    ],
+    "comboInto": [
+      "libin_sp1_chansi",
+      "libin_sp3_yingzong"
+    ],
+    "airOk": true,
+    "tags": [
+      "invincible",
+      "loop",
+      "cheap"
+    ]
+  },
+  "provenance": {
+    "generator": "model-assisted",
+    "modelVersion": "deepseek-v4.1-flash",
+    "promptId": "prompt.special.v1",
+    "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+    "seed": 20261113,
+    "inputsHash": "sha256:f8111a598b9c3e5f7e5a7c3fcb78bcec31c6c06a69e2b87abe975699afe5dc0e",
+    "generatedAt": "2026-11-13T21:40:00+08:00",
+    "reviewStatus": "rejected",
+    "reviewId": "RV-005",
+    "reviewer": "战斗系统 + QA 联合复核",
+    "balanceNotes": "驳回。三点硬伤：(1) startup=6 却带 destructionLevel=3，直接违反平衡约束第 5 条第 1 款；(2) cancelInto 含自身技能组，形成 A→A 自循环，可无限连；(3) 6 帧无敌起手 + 120 伤害 + 20 耗气，伤害/资源比 6.0 且无风险。建议改为：startup 提高到 18、伤害降到 70、去掉自身取消、destructionLevel 降为 1。修改后需重新走 RV 流程。"
+  }
+}

@@ -1,0 +1,1568 @@
+{
+  "schemaVersion": "1.0.0",
+  "sceneId": "shuangting",
+  "displayName": "霜庭",
+  "version": "2.0.0",
+  "seed": 20261113,
+  "generator": {
+    "name": "scene-gen",
+    "version": "scene-gen/1.0.0",
+    "paramsFile": "scene/params/shuangting.json"
+  },
+  "paramsHash": "sha256:d510c3e391a1b61409cb0f890996950087754dcd8db91f8844d926297dd910e0",
+  "generatedAt": "2026-11-16T06:57:51+08:00",
+  "palette": {
+    "skyTop": "#101a26",
+    "skyBottom": "#24303a",
+    "ridgeNear": "#2f3a3a",
+    "ridgeMid": "#3a4441",
+    "ridgeFar": "#4a5350",
+    "groundBase": "#4a4640",
+    "groundPatch": "#3f4a3c",
+    "foliage": "#2f4438",
+    "foliageAlt": "#3d5344",
+    "lanternPaper": "#e8a34a",
+    "fragmentA": "#6b6357",
+    "fragmentB": "#7d7364",
+    "fragmentC": "#584f45"
+  },
+  "fogDensity": 0.018,
+  "layers": {
+    "ridges": [
+      {
+        "layer": 0,
+        "z": -26,
+        "color": "#2f3a3a",
+        "segments": [
+          {
+            "x": -26,
+            "y": 1.56
+          },
+          {
+            "x": -22.53,
+            "y": 1.97
+          },
+          {
+            "x": -19.07,
+            "y": 3.22
+          },
+          {
+            "x": -15.6,
+            "y": 4.2
+          },
+          {
+            "x": -12.13,
+            "y": 3.4
+          },
+          {
+            "x": -8.67,
+            "y": 3.89
+          },
+          {
+            "x": -5.2,
+            "y": 2.3
+          },
+          {
+            "x": -1.73,
+            "y": 2.29
+          },
+          {
+            "x": 1.73,
+            "y": 1.17
+          },
+          {
+            "x": 5.2,
+            "y": -0.47
+          },
+          {
+            "x": 8.67,
+            "y": -0.86
+          },
+          {
+            "x": 12.13,
+            "y": -1.86
+          },
+          {
+            "x": 15.6,
+            "y": -1.01
+          },
+          {
+            "x": 19.07,
+            "y": -1.24
+          },
+          {
+            "x": 22.53,
+            "y": -0.11
+          },
+          {
+            "x": 26,
+            "y": 0.31
+          }
+        ]
+      },
+      {
+        "layer": 1,
+        "z": -35,
+        "color": "#3a4441",
+        "segments": [
+          {
+            "x": -26,
+            "y": 6.31
+          },
+          {
+            "x": -22.53,
+            "y": 5.24
+          },
+          {
+            "x": -19.07,
+            "y": 4.84
+          },
+          {
+            "x": -15.6,
+            "y": 3.97
+          },
+          {
+            "x": -12.13,
+            "y": 2.7
+          },
+          {
+            "x": -8.67,
+            "y": 2.58
+          },
+          {
+            "x": -5.2,
+            "y": 2.19
+          },
+          {
+            "x": -1.73,
+            "y": 1.36
+          },
+          {
+            "x": 1.73,
+            "y": 1.92
+          },
+          {
+            "x": 5.2,
+            "y": 1.66
+          },
+          {
+            "x": 8.67,
+            "y": 1.98
+          },
+          {
+            "x": 12.13,
+            "y": 2.86
+          },
+          {
+            "x": 15.6,
+            "y": 4.74
+          },
+          {
+            "x": 19.07,
+            "y": 4.85
+          },
+          {
+            "x": 22.53,
+            "y": 5.97
+          },
+          {
+            "x": 26,
+            "y": 5.99
+          }
+        ]
+      },
+      {
+        "layer": 2,
+        "z": -44,
+        "color": "#4a5350",
+        "segments": [
+          {
+            "x": -26,
+            "y": 5.05
+          },
+          {
+            "x": -22.53,
+            "y": 5.43
+          },
+          {
+            "x": -19.07,
+            "y": 4.94
+          },
+          {
+            "x": -15.6,
+            "y": 3.94
+          },
+          {
+            "x": -12.13,
+            "y": 4.39
+          },
+          {
+            "x": -8.67,
+            "y": 4.97
+          },
+          {
+            "x": -5.2,
+            "y": 5.2
+          },
+          {
+            "x": -1.73,
+            "y": 5.57
+          },
+          {
+            "x": 1.73,
+            "y": 6.15
+          },
+          {
+            "x": 5.2,
+            "y": 6.82
+          },
+          {
+            "x": 8.67,
+            "y": 7.73
+          },
+          {
+            "x": 12.13,
+            "y": 7.29
+          },
+          {
+            "x": 15.6,
+            "y": 7.36
+          },
+          {
+            "x": 19.07,
+            "y": 6.78
+          },
+          {
+            "x": 22.53,
+            "y": 6.54
+          },
+          {
+            "x": 26,
+            "y": 6.18
+          }
+        ]
+      }
+    ],
+    "foliage": [
+      {
+        "id": "foliage-00",
+        "x": 6.1,
+        "z": -1.76,
+        "scale": 0.77,
+        "rot": 0.056,
+        "kind": "bamboo",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-01",
+        "x": 7.65,
+        "z": -1.74,
+        "scale": 0.89,
+        "rot": 3.69,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-02",
+        "x": 8.39,
+        "z": -2.26,
+        "scale": 0.98,
+        "rot": 5.724,
+        "kind": "shrub",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-03",
+        "x": -8.06,
+        "z": -1.97,
+        "scale": 0.96,
+        "rot": 1.541,
+        "kind": "shrub",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-04",
+        "x": -5.75,
+        "z": -1.81,
+        "scale": 0.75,
+        "rot": 3.769,
+        "kind": "bamboo",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-05",
+        "x": 6.09,
+        "z": -1.94,
+        "scale": 1.1,
+        "rot": 3.057,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-06",
+        "x": -1.62,
+        "z": -11.69,
+        "scale": 1.01,
+        "rot": 4.64,
+        "kind": "pine",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-07",
+        "x": 4.71,
+        "z": -11.87,
+        "scale": 1.31,
+        "rot": 5.007,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-08",
+        "x": -4.87,
+        "z": -8.02,
+        "scale": 1.04,
+        "rot": 2.308,
+        "kind": "bamboo",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-09",
+        "x": 0.69,
+        "z": -7.67,
+        "scale": 0.89,
+        "rot": 4.682,
+        "kind": "bamboo",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-10",
+        "x": 4.93,
+        "z": -5.08,
+        "scale": 0.8,
+        "rot": 0.939,
+        "kind": "shrub",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-11",
+        "x": -4.47,
+        "z": -6,
+        "scale": 1.13,
+        "rot": 5.621,
+        "kind": "bamboo",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-12",
+        "x": -10.15,
+        "z": -7.95,
+        "scale": 0.91,
+        "rot": 5.359,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-13",
+        "x": -1.24,
+        "z": -10.03,
+        "scale": 1.47,
+        "rot": 1.204,
+        "kind": "bamboo",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-14",
+        "x": 3.44,
+        "z": -10.14,
+        "scale": 1.01,
+        "rot": 5.343,
+        "kind": "bamboo",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-15",
+        "x": -5.28,
+        "z": -11.01,
+        "scale": 1.39,
+        "rot": 1.292,
+        "kind": "shrub",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-16",
+        "x": 5.19,
+        "z": -8.03,
+        "scale": 0.98,
+        "rot": 5.489,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-17",
+        "x": -1.34,
+        "z": -11.35,
+        "scale": 1.16,
+        "rot": 4.727,
+        "kind": "bamboo",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-18",
+        "x": 0.34,
+        "z": -12.24,
+        "scale": 1.4,
+        "rot": 4.532,
+        "kind": "pine",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-19",
+        "x": 6.15,
+        "z": -12.01,
+        "scale": 0.9,
+        "rot": 4.121,
+        "kind": "pine",
+        "color": "#2f4438"
+      },
+      {
+        "id": "foliage-20",
+        "x": 8.43,
+        "z": -8.17,
+        "scale": 0.84,
+        "rot": 6.102,
+        "kind": "pine",
+        "color": "#3d5344"
+      },
+      {
+        "id": "foliage-21",
+        "x": 9.05,
+        "z": -9.96,
+        "scale": 1.4,
+        "rot": 1.17,
+        "kind": "shrub",
+        "color": "#2f4438"
+      }
+    ],
+    "groundPatches": [
+      {
+        "id": "patch-00",
+        "x": 4.03,
+        "z": 0.52,
+        "w": 1.86,
+        "d": 0.89,
+        "rot": 0.551,
+        "tone": "#453f38",
+        "alpha": 0.29
+      },
+      {
+        "id": "patch-01",
+        "x": 4.71,
+        "z": -1.67,
+        "w": 1.85,
+        "d": 0.8,
+        "rot": 3.038,
+        "tone": "#3f4a3c",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-02",
+        "x": 3.74,
+        "z": 0.15,
+        "w": 1.75,
+        "d": 0.65,
+        "rot": 0.55,
+        "tone": "#453f38",
+        "alpha": 0.33
+      },
+      {
+        "id": "patch-03",
+        "x": 4.05,
+        "z": -0.99,
+        "w": 1.48,
+        "d": 0.71,
+        "rot": 0.659,
+        "tone": "#4d4a42",
+        "alpha": 0.34
+      },
+      {
+        "id": "patch-04",
+        "x": 5.47,
+        "z": -2.01,
+        "w": 0.83,
+        "d": 0.87,
+        "rot": 0.123,
+        "tone": "#453f38",
+        "alpha": 0.36
+      },
+      {
+        "id": "patch-05",
+        "x": 1.12,
+        "z": -0.35,
+        "w": 1,
+        "d": 1.21,
+        "rot": 1.907,
+        "tone": "#3f4a3c",
+        "alpha": 0.18
+      },
+      {
+        "id": "patch-06",
+        "x": -1.8,
+        "z": 1.02,
+        "w": 0.88,
+        "d": 0.89,
+        "rot": 0.572,
+        "tone": "#453f38",
+        "alpha": 0.35
+      },
+      {
+        "id": "patch-07",
+        "x": -5.38,
+        "z": 1.73,
+        "w": 1.09,
+        "d": 1.03,
+        "rot": 2.443,
+        "tone": "#3f4a3c",
+        "alpha": 0.3
+      },
+      {
+        "id": "patch-08",
+        "x": 3.77,
+        "z": -0.4,
+        "w": 2.28,
+        "d": 0.64,
+        "rot": 0.751,
+        "tone": "#453f38",
+        "alpha": 0.36
+      },
+      {
+        "id": "patch-09",
+        "x": -5.23,
+        "z": 0.88,
+        "w": 1.02,
+        "d": 1.25,
+        "rot": 1.914,
+        "tone": "#4d4a42",
+        "alpha": 0.18
+      },
+      {
+        "id": "patch-10",
+        "x": -0.73,
+        "z": 0.61,
+        "w": 1.64,
+        "d": 1.39,
+        "rot": 2.995,
+        "tone": "#3f4a3c",
+        "alpha": 0.36
+      },
+      {
+        "id": "patch-11",
+        "x": -3.77,
+        "z": -0.93,
+        "w": 1.63,
+        "d": 1.32,
+        "rot": 0.014,
+        "tone": "#453f38",
+        "alpha": 0.35
+      },
+      {
+        "id": "patch-12",
+        "x": -5.37,
+        "z": -1.26,
+        "w": 2.05,
+        "d": 0.58,
+        "rot": 0.383,
+        "tone": "#3f4a3c",
+        "alpha": 0.27
+      },
+      {
+        "id": "patch-13",
+        "x": -3.01,
+        "z": 2.19,
+        "w": 1.56,
+        "d": 1.15,
+        "rot": 0.289,
+        "tone": "#4d4a42",
+        "alpha": 0.27
+      },
+      {
+        "id": "patch-14",
+        "x": -5.77,
+        "z": 1.82,
+        "w": 1.85,
+        "d": 0.67,
+        "rot": 1.291,
+        "tone": "#453f38",
+        "alpha": 0.28
+      },
+      {
+        "id": "patch-15",
+        "x": -5.74,
+        "z": -0.55,
+        "w": 1.71,
+        "d": 0.75,
+        "rot": 2.686,
+        "tone": "#4d4a42",
+        "alpha": 0.26
+      },
+      {
+        "id": "patch-16",
+        "x": -5.89,
+        "z": 0.52,
+        "w": 1.16,
+        "d": 1.05,
+        "rot": 0.667,
+        "tone": "#3f4a3c",
+        "alpha": 0.33
+      },
+      {
+        "id": "patch-17",
+        "x": 5.86,
+        "z": 0.31,
+        "w": 1.71,
+        "d": 1.46,
+        "rot": 1.837,
+        "tone": "#453f38",
+        "alpha": 0.39
+      },
+      {
+        "id": "patch-18",
+        "x": 5.22,
+        "z": 2.01,
+        "w": 1.11,
+        "d": 0.56,
+        "rot": 2.39,
+        "tone": "#3f4a3c",
+        "alpha": 0.32
+      },
+      {
+        "id": "patch-19",
+        "x": -6.3,
+        "z": -0.19,
+        "w": 1.85,
+        "d": 1.29,
+        "rot": 0.562,
+        "tone": "#4d4a42",
+        "alpha": 0.24
+      },
+      {
+        "id": "patch-20",
+        "x": -3.85,
+        "z": 0.73,
+        "w": 1.02,
+        "d": 1.47,
+        "rot": 2.457,
+        "tone": "#4d4a42",
+        "alpha": 0.38
+      },
+      {
+        "id": "patch-21",
+        "x": -3.04,
+        "z": 0.24,
+        "w": 1.06,
+        "d": 1.09,
+        "rot": 2.838,
+        "tone": "#3f4a3c",
+        "alpha": 0.18
+      },
+      {
+        "id": "patch-22",
+        "x": 3.25,
+        "z": -1.01,
+        "w": 1.76,
+        "d": 1.12,
+        "rot": 1.697,
+        "tone": "#4d4a42",
+        "alpha": 0.41
+      },
+      {
+        "id": "patch-23",
+        "x": -1.07,
+        "z": 0.72,
+        "w": 1.69,
+        "d": 0.65,
+        "rot": 1.255,
+        "tone": "#453f38",
+        "alpha": 0.33
+      },
+      {
+        "id": "patch-24",
+        "x": -5.89,
+        "z": 1.92,
+        "w": 1.13,
+        "d": 0.9,
+        "rot": 1.957,
+        "tone": "#453f38",
+        "alpha": 0.4
+      },
+      {
+        "id": "patch-25",
+        "x": -6.25,
+        "z": 0.22,
+        "w": 1.25,
+        "d": 1.37,
+        "rot": 0.468,
+        "tone": "#4d4a42",
+        "alpha": 0.27
+      },
+      {
+        "id": "patch-26",
+        "x": -5.98,
+        "z": -1.55,
+        "w": 1.72,
+        "d": 0.74,
+        "rot": 2.894,
+        "tone": "#3f4a3c",
+        "alpha": 0.37
+      },
+      {
+        "id": "patch-27",
+        "x": 5.14,
+        "z": -2.15,
+        "w": 0.92,
+        "d": 1.31,
+        "rot": 0.148,
+        "tone": "#4d4a42",
+        "alpha": 0.36
+      }
+    ],
+    "lanterns": [
+      {
+        "id": "lantern-00",
+        "x": -3.61,
+        "z": -1.911,
+        "y": 2.624,
+        "scale": 0.945,
+        "swayPhase": 5.287,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-01",
+        "x": 3.57,
+        "z": -1.928,
+        "y": 2.602,
+        "scale": 0.923,
+        "swayPhase": 1.597,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-02",
+        "x": -4.37,
+        "z": -1.881,
+        "y": 2.715,
+        "scale": 0.953,
+        "swayPhase": 2.838,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-03",
+        "x": 4.35,
+        "z": -1.91,
+        "y": 2.701,
+        "scale": 0.955,
+        "swayPhase": 3.762,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-04",
+        "x": -5.19,
+        "z": -1.882,
+        "y": 2.849,
+        "scale": 0.935,
+        "swayPhase": 1.562,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-05",
+        "x": 5.15,
+        "z": -1.932,
+        "y": 2.642,
+        "scale": 0.933,
+        "swayPhase": 4.507,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-06",
+        "x": 0,
+        "z": -1.93,
+        "y": 2.641,
+        "scale": 0.868,
+        "swayPhase": 1.176,
+        "color": "#e8a34a",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      }
+    ],
+    "fragmentPalettes": [
+      {
+        "id": "frag-0",
+        "preset": "wood_pillar",
+        "colors": [
+          "#6b6357",
+          "#6b6357"
+        ],
+        "roughness": 0.85,
+        "count": 6
+      },
+      {
+        "id": "frag-1",
+        "preset": "plaster_wall",
+        "colors": [
+          "#6b6357",
+          "#584f45"
+        ],
+        "roughness": 0.87,
+        "count": 10
+      },
+      {
+        "id": "frag-2",
+        "preset": "stone_slab",
+        "colors": [
+          "#584f45",
+          "#584f45"
+        ],
+        "roughness": 0.76,
+        "count": 9
+      },
+      {
+        "id": "frag-3",
+        "preset": "paper_lantern",
+        "colors": [
+          "#584f45",
+          "#584f45"
+        ],
+        "roughness": 0.9,
+        "count": 10
+      },
+      {
+        "id": "frag-4",
+        "preset": "bamboo_fence",
+        "colors": [
+          "#584f45",
+          "#7d7364"
+        ],
+        "roughness": 0.72,
+        "count": 11
+      },
+      {
+        "id": "frag-5",
+        "preset": "terracotta",
+        "colors": [
+          "#7d7364",
+          "#7d7364"
+        ],
+        "roughness": 0.72,
+        "count": 10
+      }
+    ],
+    "leaves": [
+      {
+        "x": -0.65,
+        "y": 2.45,
+        "z": 0.69,
+        "phase": 0.843,
+        "speed": 0.531,
+        "size": 0.097
+      },
+      {
+        "x": -5.98,
+        "y": 3.68,
+        "z": 1.51,
+        "phase": 3.858,
+        "speed": 0.332,
+        "size": 0.061
+      },
+      {
+        "x": -6.92,
+        "y": 4.21,
+        "z": -1.68,
+        "phase": 4.723,
+        "speed": 0.599,
+        "size": 0.077
+      },
+      {
+        "x": 5.15,
+        "y": 1.71,
+        "z": -2.68,
+        "phase": 3.826,
+        "speed": 0.761,
+        "size": 0.08
+      },
+      {
+        "x": -3.99,
+        "y": 1.74,
+        "z": -2.99,
+        "phase": 3.18,
+        "speed": 0.589,
+        "size": 0.094
+      },
+      {
+        "x": 3.84,
+        "y": 2.37,
+        "z": -1.56,
+        "phase": 2.248,
+        "speed": 0.686,
+        "size": 0.056
+      },
+      {
+        "x": 3.36,
+        "y": 1.89,
+        "z": -2.81,
+        "phase": 5.924,
+        "speed": 0.78,
+        "size": 0.062
+      },
+      {
+        "x": 3.37,
+        "y": 2.44,
+        "z": -0.05,
+        "phase": 1.792,
+        "speed": 0.529,
+        "size": 0.041
+      },
+      {
+        "x": -4.07,
+        "y": 2.87,
+        "z": -0.13,
+        "phase": 5.946,
+        "speed": 0.434,
+        "size": 0.056
+      },
+      {
+        "x": 7.18,
+        "y": 3.1,
+        "z": -1.05,
+        "phase": 1.828,
+        "speed": 0.661,
+        "size": 0.087
+      },
+      {
+        "x": -3.93,
+        "y": 2.92,
+        "z": -3.07,
+        "phase": 0.237,
+        "speed": 0.796,
+        "size": 0.082
+      },
+      {
+        "x": 3.88,
+        "y": 4.46,
+        "z": -2.03,
+        "phase": 4.579,
+        "speed": 0.317,
+        "size": 0.094
+      },
+      {
+        "x": -7.03,
+        "y": 1.44,
+        "z": 1.4,
+        "phase": 4.156,
+        "speed": 0.285,
+        "size": 0.058
+      },
+      {
+        "x": -3.66,
+        "y": 4.68,
+        "z": -2.55,
+        "phase": 0.746,
+        "speed": 0.642,
+        "size": 0.075
+      },
+      {
+        "x": 8.25,
+        "y": 2.93,
+        "z": -2.6,
+        "phase": 4.591,
+        "speed": 0.505,
+        "size": 0.05
+      },
+      {
+        "x": -8.76,
+        "y": 4.23,
+        "z": -2.15,
+        "phase": 5.55,
+        "speed": 0.508,
+        "size": 0.061
+      },
+      {
+        "x": -2.6,
+        "y": 3.76,
+        "z": -0.62,
+        "phase": 5.662,
+        "speed": 0.515,
+        "size": 0.062
+      },
+      {
+        "x": 2.02,
+        "y": 3.91,
+        "z": -1.93,
+        "phase": 2.969,
+        "speed": 0.68,
+        "size": 0.078
+      },
+      {
+        "x": 2.98,
+        "y": 5.37,
+        "z": -1.33,
+        "phase": 3.934,
+        "speed": 0.494,
+        "size": 0.057
+      },
+      {
+        "x": -2.07,
+        "y": 1.61,
+        "z": 0.08,
+        "phase": 3.247,
+        "speed": 0.302,
+        "size": 0.096
+      },
+      {
+        "x": 4.81,
+        "y": 2.63,
+        "z": -2.1,
+        "phase": 1.416,
+        "speed": 0.546,
+        "size": 0.095
+      },
+      {
+        "x": 4.25,
+        "y": 1.59,
+        "z": 0.36,
+        "phase": 0.314,
+        "speed": 0.642,
+        "size": 0.086
+      },
+      {
+        "x": 7.76,
+        "y": 3.82,
+        "z": -2.61,
+        "phase": 1.308,
+        "speed": 0.514,
+        "size": 0.068
+      },
+      {
+        "x": 8.13,
+        "y": 5.15,
+        "z": -1.28,
+        "phase": 3.641,
+        "speed": 0.43,
+        "size": 0.045
+      },
+      {
+        "x": -0.08,
+        "y": 4.04,
+        "z": -1.12,
+        "phase": 2.21,
+        "speed": 0.673,
+        "size": 0.069
+      },
+      {
+        "x": 2.76,
+        "y": 1.66,
+        "z": -0.66,
+        "phase": 6.045,
+        "speed": 0.341,
+        "size": 0.089
+      },
+      {
+        "x": -6.19,
+        "y": 4.29,
+        "z": -1.02,
+        "phase": 2.763,
+        "speed": 0.38,
+        "size": 0.06
+      },
+      {
+        "x": 5.93,
+        "y": 4.51,
+        "z": -2.77,
+        "phase": 3.81,
+        "speed": 0.634,
+        "size": 0.041
+      },
+      {
+        "x": -4.49,
+        "y": 4.78,
+        "z": -0.68,
+        "phase": 4.221,
+        "speed": 0.467,
+        "size": 0.088
+      },
+      {
+        "x": -0.2,
+        "y": 1.9,
+        "z": -2.28,
+        "phase": 5.535,
+        "speed": 0.632,
+        "size": 0.053
+      },
+      {
+        "x": 5.85,
+        "y": 3.23,
+        "z": -1.83,
+        "phase": 0.607,
+        "speed": 0.753,
+        "size": 0.053
+      },
+      {
+        "x": 0.86,
+        "y": 3.42,
+        "z": -1.11,
+        "phase": 1.139,
+        "speed": 0.614,
+        "size": 0.054
+      },
+      {
+        "x": 4.07,
+        "y": 4.31,
+        "z": 0.92,
+        "phase": 4.844,
+        "speed": 0.391,
+        "size": 0.073
+      },
+      {
+        "x": 1.38,
+        "y": 5.03,
+        "z": 1.48,
+        "phase": 5.324,
+        "speed": 0.465,
+        "size": 0.1
+      },
+      {
+        "x": -7.1,
+        "y": 2.65,
+        "z": -1.74,
+        "phase": 0.037,
+        "speed": 0.392,
+        "size": 0.046
+      },
+      {
+        "x": 2.16,
+        "y": 4.3,
+        "z": -1.1,
+        "phase": 1.607,
+        "speed": 0.757,
+        "size": 0.068
+      },
+      {
+        "x": 1,
+        "y": 1.6,
+        "z": -1.53,
+        "phase": 5.603,
+        "speed": 0.335,
+        "size": 0.075
+      },
+      {
+        "x": -3.39,
+        "y": 2.62,
+        "z": -2.21,
+        "phase": 5.535,
+        "speed": 0.387,
+        "size": 0.058
+      },
+      {
+        "x": 2.26,
+        "y": 3.98,
+        "z": -0.37,
+        "phase": 0.387,
+        "speed": 0.345,
+        "size": 0.075
+      },
+      {
+        "x": -3.52,
+        "y": 1.46,
+        "z": -1.94,
+        "phase": 6.183,
+        "speed": 0.274,
+        "size": 0.042
+      },
+      {
+        "x": 0.26,
+        "y": 4.37,
+        "z": -1.18,
+        "phase": 3.48,
+        "speed": 0.629,
+        "size": 0.074
+      },
+      {
+        "x": 0.91,
+        "y": 2.28,
+        "z": 1.01,
+        "phase": 0.487,
+        "speed": 0.653,
+        "size": 0.084
+      },
+      {
+        "x": -6.17,
+        "y": 2.66,
+        "z": -2.29,
+        "phase": 0.786,
+        "speed": 0.435,
+        "size": 0.078
+      },
+      {
+        "x": -0.57,
+        "y": 1.4,
+        "z": 0.18,
+        "phase": 4.889,
+        "speed": 0.399,
+        "size": 0.08
+      },
+      {
+        "x": -0.84,
+        "y": 4.8,
+        "z": 1.32,
+        "phase": 2.7,
+        "speed": 0.43,
+        "size": 0.064
+      },
+      {
+        "x": -0.83,
+        "y": 1.86,
+        "z": -0.21,
+        "phase": 5.817,
+        "speed": 0.471,
+        "size": 0.044
+      }
+    ]
+  },
+  "manual": {
+    "_note": "以下内容为手工设计并审核，生成器只复制不修改（source=hand-authored）。",
+    "source": "hand-authored",
+    "reviewId": "RV-SCENE-001",
+    "arena": {
+      "width": 13,
+      "depth": 7,
+      "groundY": 0,
+      "fightBounds": {
+        "minX": -5.6,
+        "maxX": 5.6
+      },
+      "floorSegments": [
+        {
+          "id": "floor-a",
+          "minX": -6.6,
+          "maxX": -1.9,
+          "destroyable": false
+        },
+        {
+          "id": "floor-b",
+          "minX": -1.9,
+          "maxX": 1.9,
+          "destroyable": true
+        },
+        {
+          "id": "floor-c",
+          "minX": 1.9,
+          "maxX": 6.6,
+          "destroyable": false
+        }
+      ]
+    },
+    "colliders": [
+      {
+        "id": "wall-back",
+        "minX": -6.6,
+        "maxX": 6.6,
+        "y": 0,
+        "depth": 0.4,
+        "kind": "wall",
+        "blocksMovement": true
+      },
+      {
+        "id": "step-front",
+        "minX": -6.6,
+        "maxX": 6.6,
+        "y": -0.28,
+        "depth": 0.2,
+        "kind": "ledge",
+        "blocksMovement": false
+      }
+    ],
+    "keyDestroyables": [
+      {
+        "id": "pillar-west",
+        "tier": 2,
+        "maxHp": 90,
+        "stages": 2,
+        "position": {
+          "x": -4.25,
+          "y": 0,
+          "z": -2.02
+        },
+        "size": {
+          "w": 0.46,
+          "h": 3.3,
+          "d": 0.46
+        },
+        "fragmentsPreset": "stone_pillar",
+        "chainRadius": 2.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "pillar-east",
+        "tier": 2,
+        "maxHp": 90,
+        "stages": 2,
+        "position": {
+          "x": 4.25,
+          "y": 0,
+          "z": -2.02
+        },
+        "size": {
+          "w": 0.46,
+          "h": 3.3,
+          "d": 0.46
+        },
+        "fragmentsPreset": "stone_pillar",
+        "chainRadius": 2.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "wall-panel-east",
+        "tier": 2,
+        "maxHp": 70,
+        "stages": 2,
+        "position": {
+          "x": 3.9,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 1.5,
+          "h": 1.92,
+          "d": 0.86
+        },
+        "fragmentsPreset": "wood_pillar",
+        "chainRadius": 1.6,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "floor-mid",
+        "tier": 3,
+        "maxHp": 110,
+        "stages": 1,
+        "position": {
+          "x": 0,
+          "y": -0.1,
+          "z": 0.2
+        },
+        "size": {
+          "w": 3.8,
+          "h": 0.2,
+          "d": 2.8
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 3.4,
+        "colliderOnBreak": "collapse",
+        "opensPassage": false,
+        "collapseZone": {
+          "id": "court-mid",
+          "fromX": -1.9,
+          "toX": 1.9,
+          "depth": 0.74
+        },
+        "sfx": "collapse"
+      },
+      {
+        "id": "incense-burner",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 0.8,
+          "h": 0.9,
+          "d": 0.8
+        },
+        "fragmentsPreset": "terracotta",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "temple-drum",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -3.9,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 1.5,
+          "h": 1.92,
+          "d": 0.86
+        },
+        "fragmentsPreset": "terracotta",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "stone-lantern",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 2.15,
+          "y": 0,
+          "z": -1.7
+        },
+        "size": {
+          "w": 0.5,
+          "h": 1.1,
+          "d": 0.5
+        },
+        "fragmentsPreset": "stone_lantern",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "gate-pier",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -1.55,
+          "y": 0,
+          "z": -2.4
+        },
+        "size": {
+          "w": 0.6,
+          "h": 0.7,
+          "d": 0.5
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "hitching-post",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 4.75,
+          "y": 0,
+          "z": -1.55
+        },
+        "size": {
+          "w": 0.22,
+          "h": 1.2,
+          "d": 0.22
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "sutra-pole",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -4.9,
+          "y": 0,
+          "z": -1.3
+        },
+        "size": {
+          "w": 0.2,
+          "h": 2.6,
+          "d": 0.2
+        },
+        "fragmentsPreset": "wood_pillar",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      }
+    ],
+    "lighting": {
+      "ambient": {
+        "color": "#607a94",
+        "intensity": 0.78
+      },
+      "key": {
+        "color": "#d8e4f7",
+        "intensity": 1.28,
+        "position": {
+          "x": -6,
+          "y": 9,
+          "z": 6
+        }
+      },
+      "fill": {
+        "color": "#7f9fc4",
+        "intensity": 0.55,
+        "position": {
+          "x": 7,
+          "y": 5,
+          "z": 4
+        }
+      },
+      "rim": {
+        "color": "#96b3da",
+        "intensity": 0.95,
+        "position": {
+          "x": 0,
+          "y": 4,
+          "z": -8
+        }
+      }
+    }
+  },
+  "budget": {
+    "maxDecorTriangles": 42000,
+    "estimatedDecorTriangles": 6096,
+    "maxDrawCalls": 60,
+    "mobileDecorScale": 0.42
+  },
+  "validation": {
+    "passed": true,
+    "violations": [],
+    "checks": [
+      "装饰不进入核心战斗区",
+      "装饰不遮挡判定框通道",
+      "地面贴花透明度 < 0.45 保证可读性",
+      "manual 段未被修改（只读复制）"
+    ]
+  }
+}

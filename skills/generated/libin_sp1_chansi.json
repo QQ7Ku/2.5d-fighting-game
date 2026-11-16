@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0.0",
+  "skillId": "libin_sp1_chansi",
+  "version": "2.0.1",
+  "characterId": "libin",
+  "displayName": {
+    "zh": "缠丝劲",
+    "pinyin": "chan si jin"
+  },
+  "category": "special",
+  "input": {
+    "motion": "qcf",
+    "button": "special",
+    "requiresGround": true
+  },
+  "frames": {
+    "startup": 12,
+    "active": 14,
+    "recovery": 20
+  },
+  "hits": [
+    {
+      "id": "h1",
+      "start": 12,
+      "end": 16,
+      "box": {
+        "x": 0.95,
+        "y": 1.15,
+        "w": 1.1,
+        "h": 0.8
+      },
+      "damage": 38,
+      "hitstun": 14,
+      "blockstun": 8,
+      "hitstop": 5,
+      "knockback": {
+        "x": 0.35,
+        "y": 0
+      },
+      "guard": "mid",
+      "destructionLevel": 1,
+      "meterGain": 5,
+      "fx": "spark_small",
+      "sfx": "impact_light"
+    },
+    {
+      "id": "h2",
+      "start": 17,
+      "end": 21,
+      "box": {
+        "x": 1,
+        "y": 1.15,
+        "w": 1.25,
+        "h": 0.85
+      },
+      "damage": 36,
+      "hitstun": 14,
+      "blockstun": 8,
+      "hitstop": 5,
+      "knockback": {
+        "x": 0.3,
+        "y": 0
+      },
+      "guard": "mid",
+      "destructionLevel": 1,
+      "meterGain": 5,
+      "fx": "spark_small",
+      "sfx": "impact_light"
+    },
+    {
+      "id": "h3",
+      "start": 22,
+      "end": 26,
+      "box": {
+        "x": 1.15,
+        "y": 1.1,
+        "w": 1.5,
+        "h": 1
+      },
+      "damage": 58,
+      "hitstun": 24,
+      "blockstun": 12,
+      "hitstop": 9,
+      "knockback": {
+        "x": 5.4,
+        "y": 0.06
+      },
+      "guard": "mid",
+      "destructionLevel": 2,
+      "meterGain": 8,
+      "fx": "spark_mid",
+      "sfx": "impact_heavy"
+    }
+  ],
+  "movement": [
+    {
+      "frame": 8,
+      "vx": 0.14
+    },
+    {
+      "frame": 12,
+      "vx": 0.07
+    },
+    {
+      "frame": 16,
+      "vx": 0.02
+    }
+  ],
+  "animation": {
+    "clip": "atk_special_1",
+    "speed": 1,
+    "cancelInto": [
+      "libin_sp2_zhendi",
+      "libin_n_l1"
+    ],
+    "cancelWindow": [
+      30,
+      44
+    ]
+  },
+  "vfx3d": {
+    "preset": "palm_rush",
+    "colorHex": "#e8dcbe",
+    "scale": 1,
+    "trail": true,
+    "shakeStrength": 0.26
+  },
+  "audio": {
+    "voice": "libin_sp1_voice",
+    "impact": "impact_heavy"
+  },
+  "resource": {
+    "meterCost": 25,
+    "cooldownFrames": 45
+  },
+  "compat": {
+    "comboFrom": [
+      "libin_n_l1",
+      "libin_n_m1",
+      "libin_n_t1"
+    ],
+    "comboInto": [
+      "libin_sp2_zhendi"
+    ],
+    "airOk": false,
+    "tags": [
+      "rush",
+      "punish",
+      "wallCarry"
+    ]
+  },
+  "provenance": {
+    "generator": "model-assisted",
+    "modelVersion": "deepseek-v4.1-flash",
+    "promptId": "prompt.special.v1",
+    "promptHash": "sha256:f9bd187ce9a807d4882deb2c68f66eb8b3ef26b921558c7c14a09ba1bfceba71",
+    "seed": 20261113,
+    "inputsHash": "sha256:38bc2fb5b1b32da5e61baa1c7dec4398383e956cb3251bb702a6af3bd4e87da1",
+    "generatedAt": "2026-11-13T21:40:00+08:00",
+    "reviewStatus": "approved",
+    "reviewId": "RV-001b",
+    "reviewer": "战斗系统 + QA 联合复核（平衡复测）",
+    "balanceNotes": "v2.0.1 修订并复测通过。原 2.0.0 版本第 1/2 段击退分别为 1.2 / 1.0，实测三段只能命中第 1 段（裸值 132，仅落地 38），与「三段突进掌」定位不符。修订为 0.35 / 0.30，保留第 3 段 5.4 击退用于撞墙。复测：贴身 3 段全中伤害 119（含连段缩放；裸值 132），中距离只能命中前两段（71），符合预期。总帧数、耗气、破坏等级未变，仍满足平衡约束。"
+  }
+}

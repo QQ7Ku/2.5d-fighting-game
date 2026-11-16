@@ -1,0 +1,553 @@
+{
+  "recordId": "gen-20261113-01",
+  "modelVersion": "deepseek-v4.1-flash",
+  "promptId": "prompt.special.v1",
+  "promptFile": "skills/prompts/special-skill.prompt.md",
+  "seed": 20261113,
+  "createdAt": "2026-11-13T21:40:00+08:00",
+  "note": "策划意图与约束由策划环节给出，本文件为大模型输出的原始候选（未经校验、未经审核）。技能名称、动作、特效均为原创，未参考任何现有作品。",
+  "candidates": [
+    {
+      "schemaVersion": "1.0.0",
+      "skillId": "libin_sp1_chansi",
+      "version": "2.0.1",
+      "characterId": "libin",
+      "displayName": {
+        "zh": "缠丝劲",
+        "pinyin": "chan si jin"
+      },
+      "category": "special",
+      "input": {
+        "motion": "qcf",
+        "button": "special",
+        "requiresGround": true
+      },
+      "frames": {
+        "startup": 12,
+        "active": 14,
+        "recovery": 20
+      },
+      "hits": [
+        {
+          "id": "h1",
+          "start": 12,
+          "end": 16,
+          "box": {
+            "x": 0.95,
+            "y": 1.15,
+            "w": 1.1,
+            "h": 0.8
+          },
+          "damage": 38,
+          "hitstun": 14,
+          "blockstun": 8,
+          "hitstop": 5,
+          "knockback": {
+            "x": 0.35,
+            "y": 0
+          },
+          "guard": "mid",
+          "destructionLevel": 1,
+          "meterGain": 5,
+          "fx": "spark_small",
+          "sfx": "impact_light"
+        },
+        {
+          "id": "h2",
+          "start": 17,
+          "end": 21,
+          "box": {
+            "x": 1.0,
+            "y": 1.15,
+            "w": 1.25,
+            "h": 0.85
+          },
+          "damage": 36,
+          "hitstun": 14,
+          "blockstun": 8,
+          "hitstop": 5,
+          "knockback": {
+            "x": 0.3,
+            "y": 0
+          },
+          "guard": "mid",
+          "destructionLevel": 1,
+          "meterGain": 5,
+          "fx": "spark_small",
+          "sfx": "impact_light"
+        },
+        {
+          "id": "h3",
+          "start": 22,
+          "end": 26,
+          "box": {
+            "x": 1.15,
+            "y": 1.1,
+            "w": 1.5,
+            "h": 1.0
+          },
+          "damage": 58,
+          "hitstun": 24,
+          "blockstun": 12,
+          "hitstop": 9,
+          "knockback": {
+            "x": 5.4,
+            "y": 0.06
+          },
+          "guard": "mid",
+          "destructionLevel": 2,
+          "meterGain": 8,
+          "fx": "spark_mid",
+          "sfx": "impact_heavy"
+        }
+      ],
+      "movement": [
+        {
+          "frame": 8,
+          "vx": 0.14
+        },
+        {
+          "frame": 12,
+          "vx": 0.07
+        },
+        {
+          "frame": 16,
+          "vx": 0.02
+        }
+      ],
+      "animation": {
+        "clip": "atk_special_1",
+        "speed": 1.0,
+        "cancelInto": [
+          "libin_sp2_zhendi",
+          "libin_n_l1"
+        ],
+        "cancelWindow": [
+          30,
+          44
+        ]
+      },
+      "vfx3d": {
+        "preset": "palm_rush",
+        "colorHex": "#e8dcbe",
+        "scale": 1.0,
+        "trail": true,
+        "shakeStrength": 0.26
+      },
+      "audio": {
+        "voice": "libin_sp1_voice",
+        "impact": "impact_heavy"
+      },
+      "resource": {
+        "meterCost": 25,
+        "cooldownFrames": 45
+      },
+      "compat": {
+        "comboFrom": [
+          "libin_n_l1",
+          "libin_n_m1",
+          "libin_n_t1"
+        ],
+        "comboInto": [
+          "libin_sp2_zhendi"
+        ],
+        "airOk": false,
+        "tags": [
+          "rush",
+          "punish",
+          "wallCarry"
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "skillId": "libin_sp2_zhendi",
+      "version": "2.0.0",
+      "characterId": "libin",
+      "displayName": {
+        "zh": "震地印",
+        "pinyin": "zhen di yin"
+      },
+      "category": "special",
+      "input": {
+        "motion": "qcb",
+        "button": "special",
+        "requiresGround": true
+      },
+      "frames": {
+        "startup": 20,
+        "active": 6,
+        "recovery": 28
+      },
+      "hits": [
+        {
+          "id": "h1",
+          "start": 20,
+          "end": 25,
+          "box": {
+            "x": 0.05,
+            "y": 0.42,
+            "w": 2.9,
+            "h": 0.9
+          },
+          "damage": 92,
+          "hitstun": 26,
+          "blockstun": 16,
+          "hitstop": 12,
+          "knockback": {
+            "x": 3.2,
+            "y": 0.38
+          },
+          "guard": "unblockable",
+          "destructionLevel": 3,
+          "meterGain": 10,
+          "fx": "ground_crack",
+          "sfx": "impact_heavy"
+        }
+      ],
+      "movement": [
+        {
+          "frame": 18,
+          "vx": 0.02
+        }
+      ],
+      "animation": {
+        "clip": "atk_special_2",
+        "speed": 1.0,
+        "cancelInto": [],
+        "cancelWindow": [
+          0,
+          0
+        ]
+      },
+      "vfx3d": {
+        "preset": "ground_crack",
+        "colorHex": "#c8a45c",
+        "scale": 1.35,
+        "trail": false,
+        "shakeStrength": 0.95
+      },
+      "audio": {
+        "voice": "libin_sp2_voice",
+        "impact": "collapse"
+      },
+      "resource": {
+        "meterCost": 40,
+        "cooldownFrames": 90
+      },
+      "compat": {
+        "comboFrom": [
+          "libin_sp1_chansi"
+        ],
+        "comboInto": [],
+        "airOk": false,
+        "tags": [
+          "destruction",
+          "guardBreak",
+          "finisher"
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "skillId": "yaoshan_sp1_huilan",
+      "version": "2.0.0",
+      "characterId": "yaoshan",
+      "displayName": {
+        "zh": "回澜棍",
+        "pinyin": "hui lan gun"
+      },
+      "category": "special",
+      "input": {
+        "motion": "qcf",
+        "button": "special",
+        "requiresGround": true
+      },
+      "frames": {
+        "startup": 16,
+        "active": 10,
+        "recovery": 26
+      },
+      "hits": [
+        {
+          "id": "h1",
+          "start": 16,
+          "end": 20,
+          "box": {
+            "x": 1.5,
+            "y": 1.25,
+            "w": 2.2,
+            "h": 0.9
+          },
+          "damage": 42,
+          "hitstun": 16,
+          "blockstun": 9,
+          "hitstop": 6,
+          "knockback": {
+            "x": 1.6,
+            "y": 0
+          },
+          "guard": "mid",
+          "destructionLevel": 1,
+          "meterGain": 6,
+          "fx": "spark_small",
+          "sfx": "impact_medium"
+        },
+        {
+          "id": "h2",
+          "start": 21,
+          "end": 25,
+          "box": {
+            "x": 1.7,
+            "y": 1.2,
+            "w": 2.6,
+            "h": 1.1
+          },
+          "damage": 62,
+          "hitstun": 26,
+          "blockstun": 14,
+          "hitstop": 10,
+          "knockback": {
+            "x": 7.6,
+            "y": 0.14
+          },
+          "guard": "mid",
+          "destructionLevel": 3,
+          "meterGain": 9,
+          "fx": "spark_large",
+          "sfx": "impact_heavy"
+        }
+      ],
+      "movement": [
+        {
+          "frame": 10,
+          "vx": 0.11
+        },
+        {
+          "frame": 16,
+          "vx": 0.03
+        }
+      ],
+      "animation": {
+        "clip": "atk_special_1",
+        "speed": 0.95,
+        "cancelInto": [],
+        "cancelWindow": [
+          0,
+          0
+        ]
+      },
+      "vfx3d": {
+        "preset": "staff_sweep",
+        "colorHex": "#9fd0bd",
+        "scale": 1.25,
+        "trail": true,
+        "shakeStrength": 0.42
+      },
+      "audio": {
+        "voice": "yaoshan_sp1_voice",
+        "impact": "impact_heavy"
+      },
+      "resource": {
+        "meterCost": 30,
+        "cooldownFrames": 60
+      },
+      "compat": {
+        "comboFrom": [
+          "yaoshan_n_m1",
+          "yaoshan_n_h1"
+        ],
+        "comboInto": [],
+        "airOk": false,
+        "tags": [
+          "keepOut",
+          "wallSplat",
+          "destruction"
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "skillId": "yaoshan_sp2_guichao",
+      "version": "2.0.0",
+      "characterId": "yaoshan",
+      "displayName": {
+        "zh": "掷棍归巢",
+        "pinyin": "zhi gun gui chao"
+      },
+      "category": "special",
+      "input": {
+        "motion": "qcb",
+        "button": "special",
+        "requiresGround": true
+      },
+      "frames": {
+        "startup": 14,
+        "active": 18,
+        "recovery": 30
+      },
+      "hits": [
+        {
+          "id": "h1",
+          "start": 14,
+          "end": 22,
+          "box": {
+            "x": 3.1,
+            "y": 1.0,
+            "w": 3.0,
+            "h": 1.1
+          },
+          "damage": 64,
+          "hitstun": 22,
+          "blockstun": 13,
+          "hitstop": 9,
+          "knockback": {
+            "x": 3.4,
+            "y": 0.1
+          },
+          "guard": "overhead",
+          "destructionLevel": 2,
+          "meterGain": 8,
+          "fx": "spark_mid",
+          "sfx": "impact_medium"
+        }
+      ],
+      "movement": [],
+      "animation": {
+        "clip": "atk_special_2",
+        "speed": 1.05,
+        "cancelInto": [],
+        "cancelWindow": [
+          0,
+          0
+        ]
+      },
+      "vfx3d": {
+        "preset": "projectile_ring",
+        "colorHex": "#cfe3d8",
+        "scale": 1.1,
+        "trail": true,
+        "shakeStrength": 0.3
+      },
+      "audio": {
+        "voice": "yaoshan_sp2_voice",
+        "impact": "impact_medium"
+      },
+      "resource": {
+        "meterCost": 30,
+        "cooldownFrames": 75
+      },
+      "compat": {
+        "comboFrom": [
+          "yaoshan_n_l1"
+        ],
+        "comboInto": [],
+        "airOk": true,
+        "tags": [
+          "zoning",
+          "antiTurtle",
+          "return"
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "skillId": "libin_sp3_yingzong",
+      "version": "2.0.0",
+      "characterId": "libin",
+      "displayName": {
+        "zh": "影踪掌",
+        "pinyin": "ying zong zhang"
+      },
+      "category": "special",
+      "input": {
+        "motion": "dp",
+        "button": "special",
+        "requiresGround": false
+      },
+      "frames": {
+        "startup": 6,
+        "active": 18,
+        "recovery": 8
+      },
+      "hits": [
+        {
+          "id": "h1",
+          "start": 6,
+          "end": 24,
+          "box": {
+            "x": 0.9,
+            "y": 1.1,
+            "w": 2.0,
+            "h": 1.4
+          },
+          "damage": 120,
+          "hitstun": 30,
+          "blockstun": 18,
+          "hitstop": 12,
+          "knockback": {
+            "x": 6.0,
+            "y": 0.3
+          },
+          "guard": "unblockable",
+          "destructionLevel": 3,
+          "meterGain": 12,
+          "fx": "spark_large",
+          "sfx": "impact_heavy"
+        }
+      ],
+      "movement": [
+        {
+          "frame": 6,
+          "vx": 0.26
+        }
+      ],
+      "animation": {
+        "clip": "atk_special_1",
+        "speed": 1.4,
+        "cancelInto": [
+          "libin_sp1_chansi"
+        ],
+        "cancelWindow": [
+          18,
+          26
+        ]
+      },
+      "vfx3d": {
+        "preset": "impact_flash",
+        "colorHex": "#fff2d6",
+        "scale": 1.6,
+        "trail": true,
+        "shakeStrength": 0.8
+      },
+      "audio": {
+        "voice": "libin_sp3_voice",
+        "impact": "impact_heavy"
+      },
+      "resource": {
+        "meterCost": 20,
+        "cooldownFrames": 20
+      },
+      "compat": {
+        "comboFrom": [
+          "libin_n_l1"
+        ],
+        "comboInto": [
+          "libin_sp1_chansi",
+          "libin_sp3_yingzong"
+        ],
+        "airOk": true,
+        "tags": [
+          "invincible",
+          "loop",
+          "cheap"
+        ]
+      }
+    }
+  ],
+  "revision": {
+    "recordId": "gen-20261113-02",
+    "reason": "RV-001b 平衡修订：前两段击退过大，第三段无法命中",
+    "replaces": "2.0.0"
+  }
+}
