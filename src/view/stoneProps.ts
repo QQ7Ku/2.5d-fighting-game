@@ -24,6 +24,7 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import type { Arena } from './arena';
+import { SCENE_ID } from '../scene/sceneData';
 
 /** 探针用：每件程序化补件的落地状态。 */
 export interface StonePropState {
@@ -288,7 +289,7 @@ function makePlaque(arena: Arena, pos: [number, number, number]): void {
  * ------------------------------------------------------------------ */
 
 /** 参考图缺件与灯架的布置表（世界坐标，盒底 y）。 */
-const PLACEMENTS = {
+const SHUANGTING_PLACEMENTS = {
   /** 石狮：近景层两侧，站在石台基外侧、牌坊之前；z=-4.0 处相机可见半宽约 7.5，x=5.0 安全 */
   // v2.3.0 三次修正（每次都截图核过）：
   //  ① ±5.2 / z=-4.15 —— 被大鼓(±4.7,z=-2.05)挡掉大半身，只露上半身，读作「一团灰球」；
@@ -333,6 +334,28 @@ const PLACEMENTS = {
   lampPosts: [-5.6, 5.6],
 };
 
+/**
+ * 竹海古径（zhuhai）程序化补件表（v2.5.0 / Round 32）
+ * 山门专属件（石狮 / 匾额）不摆——古径没有门楼，摆守门狮和匾额会自相矛盾；
+ * 抱鼓石改为「径侧石墩」（±3.15 / z=-2.7），经幡与灯架保留（经幡柱在 specs 里，位置不变）。
+ */
+const ZHUHAI_PLACEMENTS = {
+  lions: [] as { id: string; pos: [number, number, number]; rotY: number }[],
+  drumStones: [
+    { id: 'drum-stone-w', pos: [-3.15, 0, -2.72] as [number, number, number], rotY: 0.18 },
+    { id: 'drum-stone-e', pos: [3.15, 0, -2.66] as [number, number, number], rotY: -0.22 },
+  ],
+  banners: [
+    { id: 'banner-1', pos: [-4.45, 2.45, -1.22] as [number, number, number], w: 0.28, h: 1.2, phase: 0 },
+    { id: 'banner-2', pos: [-4.6, 2.05, -1.18] as [number, number, number], w: 0.23, h: 0.82, phase: 1.9 },
+  ],
+  plaque: null as [number, number, number] | null,
+  lampPosts: [-5.6, 5.6],
+};
+
+/** 当前场景的补件表（竹海没有门楼，故 plaque 为 null、lions 为空） */
+const PLACEMENTS = SCENE_ID === 'zhuhai' ? ZHUHAI_PLACEMENTS : SHUANGTING_PLACEMENTS;
+
 export function mountStoneProps(arena: Arena): void {
   states.length = 0;
   bannerMeshes.length = 0;
@@ -350,8 +373,8 @@ export function mountStoneProps(arena: Arena): void {
   // ③ 经幡
   for (const b of PLACEMENTS.banners) makeBanner(arena, b.id, b.pos, b.w, b.h, b.phase);
 
-  // ④ 匾额
-  makePlaque(arena, PLACEMENTS.plaque);
+  // ④ 匾额（竹海无门楼，跳过）
+  if (PLACEMENTS.plaque) makePlaque(arena, PLACEMENTS.plaque);
 
   // ⑤ 灯架落地立柱（横杆本体在 arena.buildArchitecture 里改宽度）
   // v2.3.0 首版立柱半径 0.075/0.095 + 0.3 宽顶帽，实景里读作「两根压过牌坊的粗黑柱」。

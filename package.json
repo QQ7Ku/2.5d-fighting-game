@@ -1,7 +1,7 @@
 {
   "name": "washangshuang-fighter",
   "private": true,
-  "version": "2.4.9",
+  "version": "2.5.0",
   "type": "module",
   "description": "《瓦上霜》v2.0 — 2.5D 网页格斗原型（Three.js）",
   "scripts": {

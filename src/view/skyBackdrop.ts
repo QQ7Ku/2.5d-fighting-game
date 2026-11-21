@@ -21,7 +21,7 @@
  */
 
 import * as THREE from 'three';
-import decor from '../../scene/output/decor.json';
+import { sceneData as decor } from '../scene/sceneData';
 
 const P = (decor as unknown as { palette: Record<string, string> }).palette;
 

@@ -1,0 +1,1760 @@
+{
+  "schemaVersion": "1.0.0",
+  "sceneId": "zhuhai",
+  "displayName": "竹海古径",
+  "version": "1.0.0",
+  "seed": 20261116,
+  "generator": {
+    "name": "scene-gen",
+    "version": "scene-gen/1.0.0",
+    "paramsFile": "scene/params/zhuhai.json"
+  },
+  "paramsHash": "sha256:ad78c62c42252f0eadf96b70a45b037310dafd2200a69afa1d2fe816600d401c",
+  "generatedAt": "2026-11-21T02:16:02+08:00",
+  "palette": {
+    "skyTop": "#0c1b15",
+    "skyBottom": "#2a4436",
+    "ridgeNear": "#354c3f",
+    "ridgeMid": "#40594a",
+    "ridgeFar": "#4d6857",
+    "groundBase": "#444a3f",
+    "groundPatch": "#364a3c",
+    "foliage": "#2c4a36",
+    "foliageAlt": "#3f5d47",
+    "lanternPaper": "#e6a558",
+    "fragmentA": "#6b6357",
+    "fragmentB": "#7d7364",
+    "fragmentC": "#584f45"
+  },
+  "fogDensity": 0.03,
+  "layers": {
+    "ridges": [
+      {
+        "layer": 0,
+        "z": -26,
+        "color": "#354c3f",
+        "segments": [
+          {
+            "x": -26,
+            "y": 0.9
+          },
+          {
+            "x": -22.53,
+            "y": 1.75
+          },
+          {
+            "x": -19.07,
+            "y": 3.07
+          },
+          {
+            "x": -15.6,
+            "y": 3.5
+          },
+          {
+            "x": -12.13,
+            "y": 3.82
+          },
+          {
+            "x": -8.67,
+            "y": 3.96
+          },
+          {
+            "x": -5.2,
+            "y": 2.39
+          },
+          {
+            "x": -1.73,
+            "y": 1.99
+          },
+          {
+            "x": 1.73,
+            "y": 1.36
+          },
+          {
+            "x": 5.2,
+            "y": 0.47
+          },
+          {
+            "x": 8.67,
+            "y": -0.78
+          },
+          {
+            "x": 12.13,
+            "y": -1.5
+          },
+          {
+            "x": 15.6,
+            "y": -1.68
+          },
+          {
+            "x": 19.07,
+            "y": -0.8
+          },
+          {
+            "x": 22.53,
+            "y": -0.72
+          },
+          {
+            "x": 26,
+            "y": 0.19
+          }
+        ]
+      },
+      {
+        "layer": 1,
+        "z": -35,
+        "color": "#40594a",
+        "segments": [
+          {
+            "x": -26,
+            "y": 6.21
+          },
+          {
+            "x": -22.53,
+            "y": 5.7
+          },
+          {
+            "x": -19.07,
+            "y": 4.45
+          },
+          {
+            "x": -15.6,
+            "y": 4.23
+          },
+          {
+            "x": -12.13,
+            "y": 2.69
+          },
+          {
+            "x": -8.67,
+            "y": 2.85
+          },
+          {
+            "x": -5.2,
+            "y": 1.66
+          },
+          {
+            "x": -1.73,
+            "y": 1.27
+          },
+          {
+            "x": 1.73,
+            "y": 1.63
+          },
+          {
+            "x": 5.2,
+            "y": 1.75
+          },
+          {
+            "x": 8.67,
+            "y": 2.27
+          },
+          {
+            "x": 12.13,
+            "y": 3.12
+          },
+          {
+            "x": 15.6,
+            "y": 4.16
+          },
+          {
+            "x": 19.07,
+            "y": 5.61
+          },
+          {
+            "x": 22.53,
+            "y": 5.18
+          },
+          {
+            "x": 26,
+            "y": 5.42
+          }
+        ]
+      },
+      {
+        "layer": 2,
+        "z": -44,
+        "color": "#4d6857",
+        "segments": [
+          {
+            "x": -26,
+            "y": 5.75
+          },
+          {
+            "x": -22.53,
+            "y": 4.54
+          },
+          {
+            "x": -19.07,
+            "y": 4.56
+          },
+          {
+            "x": -15.6,
+            "y": 4.42
+          },
+          {
+            "x": -12.13,
+            "y": 4.05
+          },
+          {
+            "x": -8.67,
+            "y": 4.12
+          },
+          {
+            "x": -5.2,
+            "y": 4.91
+          },
+          {
+            "x": -1.73,
+            "y": 5.81
+          },
+          {
+            "x": 1.73,
+            "y": 7.15
+          },
+          {
+            "x": 5.2,
+            "y": 6.87
+          },
+          {
+            "x": 8.67,
+            "y": 7.84
+          },
+          {
+            "x": 12.13,
+            "y": 7.56
+          },
+          {
+            "x": 15.6,
+            "y": 7.04
+          },
+          {
+            "x": 19.07,
+            "y": 7
+          },
+          {
+            "x": 22.53,
+            "y": 6.54
+          },
+          {
+            "x": 26,
+            "y": 6.07
+          }
+        ]
+      }
+    ],
+    "foliage": [
+      {
+        "id": "foliage-00",
+        "x": -6.69,
+        "z": -2,
+        "scale": 1.24,
+        "rot": 2.137,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-01",
+        "x": -8.02,
+        "z": -1.65,
+        "scale": 1.28,
+        "rot": 3.11,
+        "kind": "shrub",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-02",
+        "x": -7.54,
+        "z": -2.21,
+        "scale": 1.23,
+        "rot": 5.642,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-03",
+        "x": -8.59,
+        "z": -2.34,
+        "scale": 1.54,
+        "rot": 2.76,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-04",
+        "x": 7.04,
+        "z": -2.31,
+        "scale": 1.13,
+        "rot": 5.239,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-05",
+        "x": -5.94,
+        "z": -2.29,
+        "scale": 0.89,
+        "rot": 4.448,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-06",
+        "x": 6.22,
+        "z": -8.8,
+        "scale": 1.42,
+        "rot": 4.577,
+        "kind": "shrub",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-07",
+        "x": 3.71,
+        "z": -8.53,
+        "scale": 1.22,
+        "rot": 3.801,
+        "kind": "pine",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-08",
+        "x": 7.06,
+        "z": -4.76,
+        "scale": 1.04,
+        "rot": 1.567,
+        "kind": "bamboo",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-09",
+        "x": 2.07,
+        "z": -10.23,
+        "scale": 0.92,
+        "rot": 1.152,
+        "kind": "shrub",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-10",
+        "x": 1.01,
+        "z": -10.36,
+        "scale": 0.77,
+        "rot": 5.295,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-11",
+        "x": -0.54,
+        "z": -10.72,
+        "scale": 0.86,
+        "rot": 2.637,
+        "kind": "shrub",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-12",
+        "x": 4.38,
+        "z": -4.93,
+        "scale": 0.77,
+        "rot": 2.392,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-13",
+        "x": -0.89,
+        "z": -7.21,
+        "scale": 1.4,
+        "rot": 2.481,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-14",
+        "x": 7.8,
+        "z": -4.22,
+        "scale": 1.17,
+        "rot": 5.603,
+        "kind": "shrub",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-15",
+        "x": -4.24,
+        "z": -6.8,
+        "scale": 1.45,
+        "rot": 5.59,
+        "kind": "shrub",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-16",
+        "x": 3,
+        "z": -6.65,
+        "scale": 0.95,
+        "rot": 1.158,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-17",
+        "x": -4.94,
+        "z": -6.48,
+        "scale": 1.5,
+        "rot": 2.233,
+        "kind": "bamboo",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-18",
+        "x": 7.12,
+        "z": -7.68,
+        "scale": 1.45,
+        "rot": 5.464,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-19",
+        "x": -2.03,
+        "z": -12.13,
+        "scale": 0.82,
+        "rot": 4.501,
+        "kind": "pine",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-20",
+        "x": -1.18,
+        "z": -6.69,
+        "scale": 0.78,
+        "rot": 2.939,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-21",
+        "x": -1.58,
+        "z": -5.42,
+        "scale": 1.17,
+        "rot": 1.411,
+        "kind": "bamboo",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-22",
+        "x": -2.09,
+        "z": -7.62,
+        "scale": 1.33,
+        "rot": 3.87,
+        "kind": "bamboo",
+        "color": "#3f5d47"
+      },
+      {
+        "id": "foliage-23",
+        "x": 7.1,
+        "z": -4.24,
+        "scale": 0.72,
+        "rot": 1.894,
+        "kind": "shrub",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-24",
+        "x": 6.29,
+        "z": -11.17,
+        "scale": 1.49,
+        "rot": 3.875,
+        "kind": "bamboo",
+        "color": "#2c4a36"
+      },
+      {
+        "id": "foliage-25",
+        "x": 1.85,
+        "z": -9.35,
+        "scale": 1.12,
+        "rot": 4.414,
+        "kind": "shrub",
+        "color": "#3f5d47"
+      }
+    ],
+    "groundPatches": [
+      {
+        "id": "patch-00",
+        "x": -5.21,
+        "z": -2.09,
+        "w": 2.19,
+        "d": 1.06,
+        "rot": 1.81,
+        "tone": "#453f38",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-01",
+        "x": -4.97,
+        "z": 1.09,
+        "w": 1.19,
+        "d": 1.5,
+        "rot": 1.054,
+        "tone": "#453f38",
+        "alpha": 0.35
+      },
+      {
+        "id": "patch-02",
+        "x": -5.37,
+        "z": 2.39,
+        "w": 2.12,
+        "d": 1.03,
+        "rot": 1.801,
+        "tone": "#4d4a42",
+        "alpha": 0.34
+      },
+      {
+        "id": "patch-03",
+        "x": 5.37,
+        "z": -0.47,
+        "w": 1.98,
+        "d": 0.85,
+        "rot": 0.619,
+        "tone": "#4d4a42",
+        "alpha": 0.4
+      },
+      {
+        "id": "patch-04",
+        "x": -3.69,
+        "z": 1.56,
+        "w": 1.57,
+        "d": 1.47,
+        "rot": 1.119,
+        "tone": "#453f38",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-05",
+        "x": 0.61,
+        "z": 0.6,
+        "w": 0.72,
+        "d": 1.11,
+        "rot": 0.912,
+        "tone": "#364a3c",
+        "alpha": 0.32
+      },
+      {
+        "id": "patch-06",
+        "x": -5.26,
+        "z": -0.96,
+        "w": 2.22,
+        "d": 1.31,
+        "rot": 1.756,
+        "tone": "#4d4a42",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-07",
+        "x": -3.57,
+        "z": 0.62,
+        "w": 1.01,
+        "d": 1.12,
+        "rot": 0.595,
+        "tone": "#4d4a42",
+        "alpha": 0.4
+      },
+      {
+        "id": "patch-08",
+        "x": 4.07,
+        "z": 1.12,
+        "w": 1.18,
+        "d": 1.39,
+        "rot": 2.649,
+        "tone": "#453f38",
+        "alpha": 0.25
+      },
+      {
+        "id": "patch-09",
+        "x": -5.62,
+        "z": -2.05,
+        "w": 0.78,
+        "d": 1.48,
+        "rot": 0.928,
+        "tone": "#453f38",
+        "alpha": 0.23
+      },
+      {
+        "id": "patch-10",
+        "x": -5.58,
+        "z": 1.25,
+        "w": 2.23,
+        "d": 1.37,
+        "rot": 1.924,
+        "tone": "#364a3c",
+        "alpha": 0.42
+      },
+      {
+        "id": "patch-11",
+        "x": -1.65,
+        "z": -1.08,
+        "w": 2.25,
+        "d": 0.97,
+        "rot": 2.164,
+        "tone": "#453f38",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-12",
+        "x": 0.29,
+        "z": 0.71,
+        "w": 1.1,
+        "d": 1.03,
+        "rot": 2.435,
+        "tone": "#453f38",
+        "alpha": 0.31
+      },
+      {
+        "id": "patch-13",
+        "x": -5.63,
+        "z": -0.68,
+        "w": 1.28,
+        "d": 0.68,
+        "rot": 1.927,
+        "tone": "#364a3c",
+        "alpha": 0.37
+      },
+      {
+        "id": "patch-14",
+        "x": 6.28,
+        "z": 1.64,
+        "w": 1.17,
+        "d": 1,
+        "rot": 2.952,
+        "tone": "#4d4a42",
+        "alpha": 0.34
+      },
+      {
+        "id": "patch-15",
+        "x": -6.25,
+        "z": -1.42,
+        "w": 0.75,
+        "d": 0.79,
+        "rot": 2.468,
+        "tone": "#4d4a42",
+        "alpha": 0.37
+      },
+      {
+        "id": "patch-16",
+        "x": 5.58,
+        "z": -1.07,
+        "w": 0.75,
+        "d": 1.05,
+        "rot": 0.36,
+        "tone": "#4d4a42",
+        "alpha": 0.25
+      },
+      {
+        "id": "patch-17",
+        "x": 5.08,
+        "z": 0.46,
+        "w": 0.77,
+        "d": 1.12,
+        "rot": 1.53,
+        "tone": "#453f38",
+        "alpha": 0.26
+      },
+      {
+        "id": "patch-18",
+        "x": 5.4,
+        "z": 1.51,
+        "w": 1.12,
+        "d": 0.74,
+        "rot": 0.615,
+        "tone": "#364a3c",
+        "alpha": 0.25
+      },
+      {
+        "id": "patch-19",
+        "x": 4.31,
+        "z": -0.43,
+        "w": 2.05,
+        "d": 0.94,
+        "rot": 0.032,
+        "tone": "#4d4a42",
+        "alpha": 0.25
+      },
+      {
+        "id": "patch-20",
+        "x": -5.23,
+        "z": -2.14,
+        "w": 1.21,
+        "d": 1.04,
+        "rot": 2.556,
+        "tone": "#364a3c",
+        "alpha": 0.42
+      },
+      {
+        "id": "patch-21",
+        "x": -2.92,
+        "z": 2.08,
+        "w": 2.22,
+        "d": 0.95,
+        "rot": 2.721,
+        "tone": "#4d4a42",
+        "alpha": 0.19
+      },
+      {
+        "id": "patch-22",
+        "x": 4.18,
+        "z": 2.31,
+        "w": 1.73,
+        "d": 0.97,
+        "rot": 2.377,
+        "tone": "#364a3c",
+        "alpha": 0.32
+      },
+      {
+        "id": "patch-23",
+        "x": -3.81,
+        "z": 0.78,
+        "w": 2.01,
+        "d": 0.71,
+        "rot": 1.716,
+        "tone": "#453f38",
+        "alpha": 0.27
+      },
+      {
+        "id": "patch-24",
+        "x": -3.98,
+        "z": 1.9,
+        "w": 0.96,
+        "d": 0.89,
+        "rot": 1.43,
+        "tone": "#4d4a42",
+        "alpha": 0.28
+      },
+      {
+        "id": "patch-25",
+        "x": 4.45,
+        "z": -2.07,
+        "w": 1.18,
+        "d": 0.57,
+        "rot": 2.392,
+        "tone": "#4d4a42",
+        "alpha": 0.22
+      },
+      {
+        "id": "patch-26",
+        "x": -2.02,
+        "z": 1.88,
+        "w": 0.75,
+        "d": 0.97,
+        "rot": 0.419,
+        "tone": "#453f38",
+        "alpha": 0.34
+      },
+      {
+        "id": "patch-27",
+        "x": 1.36,
+        "z": -1.8,
+        "w": 1.07,
+        "d": 1.03,
+        "rot": 1.939,
+        "tone": "#364a3c",
+        "alpha": 0.26
+      },
+      {
+        "id": "patch-28",
+        "x": 5.06,
+        "z": -1.41,
+        "w": 1.9,
+        "d": 1.01,
+        "rot": 1.515,
+        "tone": "#453f38",
+        "alpha": 0.34
+      },
+      {
+        "id": "patch-29",
+        "x": 5.92,
+        "z": -0.99,
+        "w": 1.85,
+        "d": 0.89,
+        "rot": 0.348,
+        "tone": "#364a3c",
+        "alpha": 0.27
+      },
+      {
+        "id": "patch-30",
+        "x": 4.83,
+        "z": 0.63,
+        "w": 2.07,
+        "d": 1.41,
+        "rot": 0.432,
+        "tone": "#364a3c",
+        "alpha": 0.22
+      },
+      {
+        "id": "patch-31",
+        "x": -1.22,
+        "z": 0.01,
+        "w": 2.12,
+        "d": 1.25,
+        "rot": 1.433,
+        "tone": "#4d4a42",
+        "alpha": 0.29
+      },
+      {
+        "id": "patch-32",
+        "x": 5.33,
+        "z": -0.35,
+        "w": 2.26,
+        "d": 1.34,
+        "rot": 0.249,
+        "tone": "#4d4a42",
+        "alpha": 0.23
+      },
+      {
+        "id": "patch-33",
+        "x": 4.17,
+        "z": -0.86,
+        "w": 1.49,
+        "d": 1.36,
+        "rot": 2.936,
+        "tone": "#4d4a42",
+        "alpha": 0.42
+      }
+    ],
+    "lanterns": [
+      {
+        "id": "lantern-00",
+        "x": -3.61,
+        "z": -1.911,
+        "y": 2.624,
+        "scale": 0.945,
+        "swayPhase": 6.032,
+        "color": "#e6a558",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-01",
+        "x": 3.57,
+        "z": -1.928,
+        "y": 2.602,
+        "scale": 0.923,
+        "swayPhase": 2.592,
+        "color": "#e6a558",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      },
+      {
+        "id": "lantern-02",
+        "x": 0,
+        "z": -1.923,
+        "y": 2.621,
+        "scale": 0.869,
+        "swayPhase": 0.576,
+        "color": "#e6a558",
+        "tier": 1,
+        "hp": 20,
+        "fragmentsPreset": "paper_lantern"
+      }
+    ],
+    "fragmentPalettes": [
+      {
+        "id": "frag-0",
+        "preset": "wood_pillar",
+        "colors": [
+          "#7d7364",
+          "#7d7364"
+        ],
+        "roughness": 0.81,
+        "count": 8
+      },
+      {
+        "id": "frag-1",
+        "preset": "plaster_wall",
+        "colors": [
+          "#6b6357",
+          "#584f45"
+        ],
+        "roughness": 0.88,
+        "count": 7
+      },
+      {
+        "id": "frag-2",
+        "preset": "stone_slab",
+        "colors": [
+          "#584f45",
+          "#6b6357"
+        ],
+        "roughness": 0.69,
+        "count": 6
+      },
+      {
+        "id": "frag-3",
+        "preset": "paper_lantern",
+        "colors": [
+          "#584f45",
+          "#7d7364"
+        ],
+        "roughness": 0.75,
+        "count": 6
+      },
+      {
+        "id": "frag-4",
+        "preset": "bamboo_fence",
+        "colors": [
+          "#584f45",
+          "#6b6357"
+        ],
+        "roughness": 0.76,
+        "count": 10
+      },
+      {
+        "id": "frag-5",
+        "preset": "terracotta",
+        "colors": [
+          "#7d7364",
+          "#7d7364"
+        ],
+        "roughness": 0.74,
+        "count": 9
+      }
+    ],
+    "leaves": [
+      {
+        "x": 2.19,
+        "y": 2.97,
+        "z": -2.23,
+        "phase": 3.838,
+        "speed": 0.439,
+        "size": 0.062
+      },
+      {
+        "x": -2.3,
+        "y": 2.17,
+        "z": -2.88,
+        "phase": 5.676,
+        "speed": 0.272,
+        "size": 0.091
+      },
+      {
+        "x": 8.71,
+        "y": 3.16,
+        "z": -3.04,
+        "phase": 5.174,
+        "speed": 0.695,
+        "size": 0.068
+      },
+      {
+        "x": -3.15,
+        "y": 3.95,
+        "z": 0.31,
+        "phase": 0.23,
+        "speed": 0.275,
+        "size": 0.089
+      },
+      {
+        "x": -6.05,
+        "y": 1.41,
+        "z": 0.1,
+        "phase": 3.15,
+        "speed": 0.34,
+        "size": 0.048
+      },
+      {
+        "x": 0.99,
+        "y": 1.85,
+        "z": -0.32,
+        "phase": 5.104,
+        "speed": 0.501,
+        "size": 0.078
+      },
+      {
+        "x": -6.59,
+        "y": 1.83,
+        "z": -1.14,
+        "phase": 5.693,
+        "speed": 0.452,
+        "size": 0.048
+      },
+      {
+        "x": 7.42,
+        "y": 3.75,
+        "z": -1.5,
+        "phase": 1.03,
+        "speed": 0.353,
+        "size": 0.049
+      },
+      {
+        "x": 4.11,
+        "y": 4.67,
+        "z": -2.91,
+        "phase": 4.231,
+        "speed": 0.792,
+        "size": 0.091
+      },
+      {
+        "x": 0.37,
+        "y": 3.72,
+        "z": -1.92,
+        "phase": 4.292,
+        "speed": 0.429,
+        "size": 0.086
+      },
+      {
+        "x": -4.94,
+        "y": 5.16,
+        "z": -0.71,
+        "phase": 1.893,
+        "speed": 0.385,
+        "size": 0.055
+      },
+      {
+        "x": 1.09,
+        "y": 3.56,
+        "z": -2.88,
+        "phase": 2.31,
+        "speed": 0.728,
+        "size": 0.054
+      },
+      {
+        "x": 8.15,
+        "y": 4.42,
+        "z": -1.62,
+        "phase": 6.21,
+        "speed": 0.328,
+        "size": 0.048
+      },
+      {
+        "x": 3.89,
+        "y": 3.16,
+        "z": -0.36,
+        "phase": 2.117,
+        "speed": 0.288,
+        "size": 0.072
+      },
+      {
+        "x": 7.94,
+        "y": 2.73,
+        "z": 0.73,
+        "phase": 3.239,
+        "speed": 0.574,
+        "size": 0.045
+      },
+      {
+        "x": 6.21,
+        "y": 4.09,
+        "z": -0.63,
+        "phase": 2.329,
+        "speed": 0.698,
+        "size": 0.043
+      },
+      {
+        "x": -3.4,
+        "y": 5.35,
+        "z": -0.14,
+        "phase": 6.25,
+        "speed": 0.485,
+        "size": 0.077
+      },
+      {
+        "x": 1.04,
+        "y": 2.71,
+        "z": -1.68,
+        "phase": 0.792,
+        "speed": 0.778,
+        "size": 0.09
+      },
+      {
+        "x": 7.84,
+        "y": 3.34,
+        "z": 0.29,
+        "phase": 2.446,
+        "speed": 0.662,
+        "size": 0.053
+      },
+      {
+        "x": 5.54,
+        "y": 5.17,
+        "z": -2.28,
+        "phase": 5.92,
+        "speed": 0.346,
+        "size": 0.042
+      },
+      {
+        "x": -2,
+        "y": 4.66,
+        "z": -0.24,
+        "phase": 0.132,
+        "speed": 0.574,
+        "size": 0.09
+      },
+      {
+        "x": 5.03,
+        "y": 1.84,
+        "z": -0.4,
+        "phase": 0.705,
+        "speed": 0.63,
+        "size": 0.089
+      },
+      {
+        "x": 8.14,
+        "y": 4.15,
+        "z": -1.94,
+        "phase": 1.827,
+        "speed": 0.265,
+        "size": 0.073
+      },
+      {
+        "x": -1.27,
+        "y": 4.49,
+        "z": -2.36,
+        "phase": 3.13,
+        "speed": 0.498,
+        "size": 0.053
+      },
+      {
+        "x": -1.97,
+        "y": 4.15,
+        "z": -0.23,
+        "phase": 4.546,
+        "speed": 0.735,
+        "size": 0.067
+      },
+      {
+        "x": -6.08,
+        "y": 4.14,
+        "z": -1.47,
+        "phase": 4.334,
+        "speed": 0.266,
+        "size": 0.051
+      },
+      {
+        "x": 6.63,
+        "y": 1.82,
+        "z": -1.19,
+        "phase": 3.362,
+        "speed": 0.632,
+        "size": 0.062
+      },
+      {
+        "x": 2.33,
+        "y": 3.92,
+        "z": -1.14,
+        "phase": 2.445,
+        "speed": 0.568,
+        "size": 0.095
+      },
+      {
+        "x": -7.32,
+        "y": 1.59,
+        "z": 0.68,
+        "phase": 1.796,
+        "speed": 0.288,
+        "size": 0.052
+      },
+      {
+        "x": 1.09,
+        "y": 1.31,
+        "z": 0.58,
+        "phase": 5.795,
+        "speed": 0.521,
+        "size": 0.057
+      },
+      {
+        "x": -5.17,
+        "y": 4.66,
+        "z": -0.66,
+        "phase": 2.5,
+        "speed": 0.712,
+        "size": 0.073
+      },
+      {
+        "x": -5.34,
+        "y": 3.01,
+        "z": -1.64,
+        "phase": 3.125,
+        "speed": 0.545,
+        "size": 0.096
+      },
+      {
+        "x": -1.27,
+        "y": 1.6,
+        "z": -0.02,
+        "phase": 2.996,
+        "speed": 0.258,
+        "size": 0.044
+      },
+      {
+        "x": -2.01,
+        "y": 1.97,
+        "z": -0.78,
+        "phase": 0.673,
+        "speed": 0.306,
+        "size": 0.044
+      },
+      {
+        "x": -6.4,
+        "y": 3.45,
+        "z": 0.78,
+        "phase": 2.061,
+        "speed": 0.491,
+        "size": 0.054
+      },
+      {
+        "x": 6.67,
+        "y": 3.56,
+        "z": -0.6,
+        "phase": 2.381,
+        "speed": 0.722,
+        "size": 0.058
+      },
+      {
+        "x": 2.52,
+        "y": 1.81,
+        "z": 0.45,
+        "phase": 6.026,
+        "speed": 0.267,
+        "size": 0.095
+      },
+      {
+        "x": 2.72,
+        "y": 4.58,
+        "z": -2.32,
+        "phase": 6.274,
+        "speed": 0.551,
+        "size": 0.082
+      },
+      {
+        "x": -5.58,
+        "y": 1.68,
+        "z": -1.21,
+        "phase": 4.997,
+        "speed": 0.279,
+        "size": 0.051
+      },
+      {
+        "x": 1.55,
+        "y": 3.76,
+        "z": 0.84,
+        "phase": 4.913,
+        "speed": 0.272,
+        "size": 0.062
+      },
+      {
+        "x": -8.28,
+        "y": 3.07,
+        "z": -2.16,
+        "phase": 5.339,
+        "speed": 0.67,
+        "size": 0.085
+      },
+      {
+        "x": 3.32,
+        "y": 2.5,
+        "z": 0.56,
+        "phase": 4.955,
+        "speed": 0.622,
+        "size": 0.053
+      },
+      {
+        "x": -4.72,
+        "y": 2.06,
+        "z": 0.61,
+        "phase": 3.913,
+        "speed": 0.46,
+        "size": 0.051
+      },
+      {
+        "x": 6.01,
+        "y": 4.28,
+        "z": -2.88,
+        "phase": 4.509,
+        "speed": 0.696,
+        "size": 0.056
+      },
+      {
+        "x": -3.4,
+        "y": 5.19,
+        "z": -0.1,
+        "phase": 3.373,
+        "speed": 0.501,
+        "size": 0.093
+      },
+      {
+        "x": 8.53,
+        "y": 2.24,
+        "z": 0.65,
+        "phase": 2.53,
+        "speed": 0.603,
+        "size": 0.087
+      },
+      {
+        "x": -1.81,
+        "y": 3.76,
+        "z": -2.99,
+        "phase": 5.807,
+        "speed": 0.726,
+        "size": 0.096
+      },
+      {
+        "x": -7.92,
+        "y": 2.8,
+        "z": -0.41,
+        "phase": 5.487,
+        "speed": 0.487,
+        "size": 0.095
+      },
+      {
+        "x": 6.33,
+        "y": 1.46,
+        "z": 0.52,
+        "phase": 3.619,
+        "speed": 0.37,
+        "size": 0.045
+      },
+      {
+        "x": 6.2,
+        "y": 2.16,
+        "z": -2.69,
+        "phase": 3.258,
+        "speed": 0.7,
+        "size": 0.077
+      },
+      {
+        "x": 6.36,
+        "y": 2.63,
+        "z": -0.47,
+        "phase": 4.879,
+        "speed": 0.376,
+        "size": 0.085
+      },
+      {
+        "x": -3.77,
+        "y": 3.3,
+        "z": -1.65,
+        "phase": 3.513,
+        "speed": 0.375,
+        "size": 0.061
+      },
+      {
+        "x": -7.43,
+        "y": 2.1,
+        "z": -0.23,
+        "phase": 2.228,
+        "speed": 0.639,
+        "size": 0.084
+      },
+      {
+        "x": -7.21,
+        "y": 1.49,
+        "z": -2.66,
+        "phase": 5.609,
+        "speed": 0.409,
+        "size": 0.067
+      },
+      {
+        "x": -3.25,
+        "y": 4.03,
+        "z": -1.36,
+        "phase": 1.899,
+        "speed": 0.638,
+        "size": 0.09
+      },
+      {
+        "x": -4.12,
+        "y": 2.46,
+        "z": -0.88,
+        "phase": 3.064,
+        "speed": 0.397,
+        "size": 0.088
+      },
+      {
+        "x": 3.78,
+        "y": 3.73,
+        "z": -1.1,
+        "phase": 1.121,
+        "speed": 0.41,
+        "size": 0.043
+      },
+      {
+        "x": -0.26,
+        "y": 5.05,
+        "z": 1.1,
+        "phase": 4.149,
+        "speed": 0.784,
+        "size": 0.093
+      },
+      {
+        "x": -7.84,
+        "y": 1.68,
+        "z": 1.33,
+        "phase": 1.506,
+        "speed": 0.547,
+        "size": 0.067
+      },
+      {
+        "x": 0.09,
+        "y": 1.85,
+        "z": -0.26,
+        "phase": 2.38,
+        "speed": 0.323,
+        "size": 0.06
+      },
+      {
+        "x": -7.38,
+        "y": 3.83,
+        "z": -0.56,
+        "phase": 2.229,
+        "speed": 0.27,
+        "size": 0.08
+      },
+      {
+        "x": -3.55,
+        "y": 5.24,
+        "z": -0.36,
+        "phase": 0.884,
+        "speed": 0.659,
+        "size": 0.094
+      },
+      {
+        "x": -5.28,
+        "y": 3.8,
+        "z": 0.59,
+        "phase": 5.728,
+        "speed": 0.607,
+        "size": 0.097
+      },
+      {
+        "x": 4.01,
+        "y": 3.81,
+        "z": -2.84,
+        "phase": 3.048,
+        "speed": 0.647,
+        "size": 0.067
+      }
+    ]
+  },
+  "manual": {
+    "_note": "竹海古径：同一套战斗层（arena/colliders/keyDestroyables 与霜庭一致，保证玩法与判定完全复用），只换氛围、装饰摆位与远景。",
+    "source": "hand-authored",
+    "reviewId": "R32-zhuhai",
+    "arena": {
+      "width": 13,
+      "depth": 7,
+      "groundY": 0,
+      "fightBounds": {
+        "minX": -5.6,
+        "maxX": 5.6
+      },
+      "floorSegments": [
+        {
+          "id": "floor-a",
+          "minX": -6.6,
+          "maxX": -1.9,
+          "destroyable": false
+        },
+        {
+          "id": "floor-b",
+          "minX": -1.9,
+          "maxX": 1.9,
+          "destroyable": true
+        },
+        {
+          "id": "floor-c",
+          "minX": 1.9,
+          "maxX": 6.6,
+          "destroyable": false
+        }
+      ]
+    },
+    "colliders": [
+      {
+        "id": "wall-back",
+        "minX": -6.6,
+        "maxX": 6.6,
+        "y": 0,
+        "depth": 0.4,
+        "kind": "wall",
+        "blocksMovement": true
+      },
+      {
+        "id": "step-front",
+        "minX": -6.6,
+        "maxX": 6.6,
+        "y": -0.28,
+        "depth": 0.2,
+        "kind": "ledge",
+        "blocksMovement": false
+      }
+    ],
+    "keyDestroyables": [
+      {
+        "id": "pillar-west",
+        "tier": 2,
+        "maxHp": 90,
+        "stages": 2,
+        "position": {
+          "x": -4.25,
+          "y": 0,
+          "z": -2.02
+        },
+        "size": {
+          "w": 0.46,
+          "h": 3.3,
+          "d": 0.46
+        },
+        "fragmentsPreset": "stone_pillar",
+        "chainRadius": 2.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "pillar-east",
+        "tier": 2,
+        "maxHp": 90,
+        "stages": 2,
+        "position": {
+          "x": 4.25,
+          "y": 0,
+          "z": -2.02
+        },
+        "size": {
+          "w": 0.46,
+          "h": 3.3,
+          "d": 0.46
+        },
+        "fragmentsPreset": "stone_pillar",
+        "chainRadius": 2.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "wall-panel-east",
+        "tier": 2,
+        "maxHp": 70,
+        "stages": 2,
+        "position": {
+          "x": 3.9,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 1.5,
+          "h": 1.92,
+          "d": 0.86
+        },
+        "fragmentsPreset": "wood_pillar",
+        "chainRadius": 1.6,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "floor-mid",
+        "tier": 3,
+        "maxHp": 110,
+        "stages": 1,
+        "position": {
+          "x": 0,
+          "y": -0.1,
+          "z": 0.2
+        },
+        "size": {
+          "w": 3.8,
+          "h": 0.2,
+          "d": 2.8
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 3.4,
+        "colliderOnBreak": "collapse",
+        "opensPassage": false,
+        "collapseZone": {
+          "id": "court-mid",
+          "fromX": -1.9,
+          "toX": 1.9,
+          "depth": 0.74
+        },
+        "sfx": "collapse"
+      },
+      {
+        "id": "incense-burner",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 0.8,
+          "h": 0.9,
+          "d": 0.8
+        },
+        "fragmentsPreset": "terracotta",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "temple-drum",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -3.9,
+          "y": 0,
+          "z": 0
+        },
+        "size": {
+          "w": 1.5,
+          "h": 1.92,
+          "d": 0.86
+        },
+        "fragmentsPreset": "terracotta",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "stone-lantern",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 2.15,
+          "y": 0,
+          "z": -1.7
+        },
+        "size": {
+          "w": 0.5,
+          "h": 1.1,
+          "d": 0.5
+        },
+        "fragmentsPreset": "stone_lantern",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "gate-pier",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -1.55,
+          "y": 0,
+          "z": -2.4
+        },
+        "size": {
+          "w": 0.6,
+          "h": 0.7,
+          "d": 0.5
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "hitching-post",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": 4.75,
+          "y": 0,
+          "z": -1.55
+        },
+        "size": {
+          "w": 0.22,
+          "h": 1.2,
+          "d": 0.22
+        },
+        "fragmentsPreset": "stone_slab",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      },
+      {
+        "id": "sutra-pole",
+        "tier": 1,
+        "maxHp": 40,
+        "stages": 1,
+        "position": {
+          "x": -4.9,
+          "y": 0,
+          "z": -1.3
+        },
+        "size": {
+          "w": 0.2,
+          "h": 2.6,
+          "d": 0.2
+        },
+        "fragmentsPreset": "wood_pillar",
+        "chainRadius": 1.2,
+        "colliderOnBreak": "remove",
+        "opensPassage": false,
+        "sfx": "shatter"
+      }
+    ],
+    "lighting": {
+      "ambient": {
+        "color": "#6d8a77",
+        "intensity": 0.86
+      },
+      "key": {
+        "color": "#e0f0e2",
+        "intensity": 1.28,
+        "position": {
+          "x": -6,
+          "y": 9,
+          "z": 6
+        }
+      },
+      "fill": {
+        "color": "#7fa78e",
+        "intensity": 0.58,
+        "position": {
+          "x": 7,
+          "y": 5,
+          "z": 4
+        }
+      },
+      "rim": {
+        "color": "#a6d4b6",
+        "intensity": 1.05,
+        "position": {
+          "x": 0,
+          "y": 4,
+          "z": -8
+        }
+      }
+    }
+  },
+  "budget": {
+    "maxDecorTriangles": 42000,
+    "estimatedDecorTriangles": 6508,
+    "maxDrawCalls": 60,
+    "mobileDecorScale": 0.42
+  },
+  "validation": {
+    "passed": true,
+    "violations": [],
+    "checks": [
+      "装饰不进入核心战斗区",
+      "装饰不遮挡判定框通道",
+      "地面贴花透明度 < 0.45 保证可读性",
+      "manual 段未被修改（只读复制）"
+    ]
+  }
+}

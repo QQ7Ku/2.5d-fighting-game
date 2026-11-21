@@ -11,6 +11,7 @@
 import * as THREE from 'three';
 import { template, DECOR_MODELS } from './glbProps';
 import type { Arena } from './arena';
+import { SCENE_ID } from '../scene/sceneData';
 
 interface DecorPlacement {
   /** 模型 id（= public/models/scene/<id>.glb） */
@@ -32,7 +33,7 @@ interface DecorPlacement {
 //     西 -5.15 石灯 / 东 +5.15 门墩。后排与杆(z-1.95)、鼓(z-2.0) 靠 z 错开，x 不抢位。
 //   全部 z≤-2.7 或 z=-1.85，不进 coreArea 净空（z∈[-1.35,2.4]）、不挡角色（fightBounds ±5.6）。
 //   水缸退到 8.4（大鼓之外）：参考图无水缸，但 DECOR_MODELS 断言要求 6 件全部 loaded，故只挪不删。
-const DECOR_PLACEMENTS: DecorPlacement[] = [
+const SHUANGTING_PLACEMENTS: DecorPlacement[] = [
   // 牌坊组（中轴，概念图正面视图）：牌坊镇场放大保持居中；台阶退到牌坊门洞下、后沿搭住
   // stone-terrace 台基（z=-3.8），前沿 z=-2.35 连台基、不插战斗平面(z≈0)。
   // v2.4.9：香炉已移到战斗层 z=0（中轴可破坏物），台阶前沿 z=-2.35 与香炉拉开，不再贴脸。
@@ -48,10 +49,14 @@ const DECOR_PLACEMENTS: DecorPlacement[] = [
   // 左丛更高更靠后、右丛矮一档并前移，角度也不同（±0.3 与 −0.13 不是反号关系）。
   { id: 'bamboo', position: [-6.9, 0, -3.55], size: [1.0, 1.85, 0.9], rotY: 0.31 },
   { id: 'bamboo', position: [6.62, 0, -3.18], size: [0.86, 1.62, 0.82], rotY: -0.13 },
-  // v2.4.2（摆位重排）：左石灯由 -5.95/-3.15 移到台阶左前方 -2.75/-1.7，读作「照台阶的门前灯」；
-  // 原先贴在鼓背后，屏幕被鼓挡掉 88%，等于看不见。
-  // v2.4.5：加 0.18 rad 的歪斜——门前的灯被风/人撞过，轴对齐是「没摆过」的痕迹。
-  { id: 'stone-lamp-tall', position: [-2.15, 0, -1.7], size: [0.7, 2.2, 0.7], rotY: 0.18 },
+  // v2.4.10（遗留项·石灯造型）：台阶左右原本是「左 2.2m 蓝顶柱灯（装饰）/ 右 1.1m 灰石塔灯（可破坏）」，
+  // 两种器型 + 高度 2:1 并排，被读成「没配成对」。改法：
+  //   ① 台阶两侧统一为**同一器型** stone-lantern（右侧可破坏件本来就是它），左装饰件同步换用；
+  //      高度取 1.12（右件 1.10），只留 1cm 差与反向小角度，避免呆板镜像。
+  //   ② 2.2m 柱灯不删（DECOR_MODELS 断言要求 loaded），改放左缘院角 -6.6/-3.2，读作「补左侧没有灯柱的暗角」；
+  //      右侧院角本来就有灯架立柱(+5.6)与水缸，不再重复一件 2m 柱灯（该 GLB 单件 ≈8.7 万三角，避免翻倍）。
+  { id: 'stone-lantern', position: [-2.15, 0, -1.7], size: [0.52, 1.12, 0.52], rotY: -0.12 },
+  { id: 'stone-lamp-tall', position: [-6.6, 0, -3.2], size: [0.7, 2.05, 0.7], rotY: 0.24 },
   // v2.4.2：右装饰鼎由 5.05/-3.6 移到香炉右侧 +1.55/-2.4，与可破坏鼎配成「香炉配双鼎」。
   // v2.4.5：z 退后 0.06、微转 0.22 rad，避免与可破坏鼎读作「一对复制的摆件」。
   { id: 'gate-pier', position: [1.62, 0, -2.34], size: [0.6, 0.7, 0.5], rotY: 0.22 },
@@ -64,6 +69,54 @@ const DECOR_PLACEMENTS: DecorPlacement[] = [
   // 再外移到 +5.95 / z=-3.4，落在落地灯柱(+5.6) 的右后方，读作「灯柱旁存水的缸」。
   { id: 'water-vat', position: [5.95, 0, -3.4], size: [0.7, 0.65, 0.7], rotY: 0.26 },
 ];
+
+/**
+ * 竹海古径（zhuhai）装饰摆位（v2.5.0 / Round 32）
+ *
+ * 与霜庭的差别只在中景—后景：不摆山门牌坊，改为「石阶古径 + 密竹夹道 + 径尽头残门」。
+ * 战斗层（arena / colliders / keyDestroyables）与霜庭完全一致，所以：
+ *   - 台阶沿中轴向 z 后退三级（-2.6 / -3.35 / -4.1），读作「从场地往里走上山」；
+ *   - 残门退到 z=-6.4，靠雾压成剪影，只留一层门形轮廓（不是第二座牌坊）；
+ *   - 两侧竹 8 丛、由近及远三层，尺寸/角度互不相同，避免镜像复制感；
+ *   - 石灯柱仍成对（±2.5/-2.5），左缘留一件 2m 柱灯作暗角照明。
+ * `DECOR_MODELS` 断言要求的 6 件（gate-stone / stone-steps / bamboo / eave-tile /
+ * stone-lamp-tall / water-vat）全部有落点，loaded 基线可继续成立。
+ */
+const ZHUHAI_PLACEMENTS: DecorPlacement[] = [
+  // 残门：缩到 4.4×3.4，退到 z=-6.4；雾下只剩轮廓
+  { id: 'gate-stone', position: [0, 0, -6.4], size: [4.4, 3.4, 0.9], rotY: 0.04 },
+  // 三级石阶：沿中轴后退，尺寸递减，读作上坡
+  { id: 'stone-steps', position: [0, 0, -2.6], size: [3.6, 0.35, 0.8] },
+  { id: 'stone-steps', position: [0, 0.28, -3.35], size: [3.2, 0.35, 0.8] },
+  { id: 'stone-steps', position: [0, 0.56, -4.1], size: [2.8, 0.35, 0.8] },
+  // 残门瓦檐：只留一侧断檐（另一侧缺失 = 荒废感，不做镜像）
+  { id: 'eave-tile', position: [-2.0, 3.05, -6.4], size: [2.2, 0.3, 0.95] },
+  // 夹道竹（近景细株）：只留两株贴住画缘，提供"竿 + 叶"的近处尺度参照。
+  // bamboo.glb 单株 ≈15.0 万三角，密摆 8 株要多付 90 万三角（实测 304 万），故近景只留 2 株；
+  // "竹海"的体量交给 bamboo-grove（整丛 ≈3.7 万三角，单位面积成本只有 bamboo 的 1/4）。
+  { id: 'bamboo', position: [-6.35, 0, -2.45], size: [1.1, 2.45, 0.95], rotY: 0.42 },
+  { id: 'bamboo', position: [6.45, 0, -2.35], size: [1.02, 2.28, 0.9], rotY: -0.36 },
+  // 竹丛墙：中景左右各三层，不等距、不镜像（-8.4/-5.6 与 +8.2/-5.9 …），把古径夹成一条走廊。
+  // 尺寸只取模型自然比例的"段"（宽>高>深），避免拉成绿墙贴片。
+  { id: 'bamboo-grove', position: [-8.45, 0, -5.55], size: [3.6, 4.5, 2.4], rotY: 0.12 },
+  { id: 'bamboo-grove', position: [-7.0, 0, -7.7], size: [3.0, 4.1, 2.2], rotY: -0.28 },
+  { id: 'bamboo-grove', position: [-9.35, 0, -3.55], size: [3.2, 4.2, 2.3], rotY: 0.55 },
+  { id: 'bamboo-grove', position: [8.25, 0, -5.85], size: [3.7, 4.6, 2.5], rotY: -0.15 },
+  { id: 'bamboo-grove', position: [6.85, 0, -7.9], size: [3.1, 4.15, 2.2], rotY: 0.34 },
+  { id: 'bamboo-grove', position: [9.2, 0, -3.35], size: [3.15, 4.05, 2.25], rotY: -0.62 },
+  // 径尾远景两丛：填住山门两侧的纯黑空档，让竹林读作"继续绕到山门之后"
+  { id: 'bamboo-grove', position: [-4.8, 0, -9.6], size: [2.8, 3.8, 2.0], rotY: 0.18 },
+  { id: 'bamboo-grove', position: [4.75, 0, -9.9], size: [2.7, 3.7, 2.0], rotY: -0.4 },
+  // 石灯：径口成对（右侧 +2.5 处是同一件装饰，可破坏石灯在 specs 的 +2.15/-1.7）
+  { id: 'stone-lantern', position: [-2.5, 0, -2.5], size: [0.52, 1.16, 0.52], rotY: 0.14 },
+  { id: 'stone-lamp-tall', position: [-6.6, 0, -3.4], size: [0.7, 2.05, 0.7], rotY: 0.3 },
+  // 水缸：径侧存水，贴着竹根
+  { id: 'water-vat', position: [-4.9, 0, -3.1], size: [0.7, 0.65, 0.7], rotY: -0.3 },
+];
+
+/** 当前场景的装饰摆位表 */
+const DECOR_PLACEMENTS: DecorPlacement[] =
+  SCENE_ID === 'zhuhai' ? ZHUHAI_PLACEMENTS : SHUANGTING_PLACEMENTS;
 
 interface DecorRecord {
   id: string;
@@ -135,6 +188,19 @@ function dim(root: THREE.Object3D, factor: number): void {
   });
 }
 
+/** 深拷贝材质：bamboo-grove 的模板同时被 stageScenery 用作远景竹林并统一染 0x2f3e34，
+ *  而 `tpl.clone(true)` 共享材质实例 —— 直接改色会连带把远景竹墙也改成近景色。
+ *  近景竹丛先克隆出独立材质再染，两个用途互不影响。 */
+function cloneMaterials(root: THREE.Object3D): void {
+  root.traverse((o) => {
+    const mesh = o as THREE.Mesh;
+    if (!mesh.isMesh) return;
+    mesh.material = Array.isArray(mesh.material)
+      ? mesh.material.map((m) => m.clone())
+      : mesh.material.clone();
+  });
+}
+
 export function mountStageDecor(arena: Arena): void {
   arenaRef = arena;
   records.length = 0;
@@ -146,11 +212,36 @@ export function mountStageDecor(arena: Arena): void {
         const root = buildRoot(tpl, p);
         if (!root) return;
         if (p.id === 'bamboo') {
-          tintCold(root, 0x33483c);
-          dim(root, 0.88);
+          // 竹海：竹是主体，压暗少一点，让夹道读得出层次而不是一团黑
+          tintCold(root, SCENE_ID === 'zhuhai' ? 0x46614c : 0x33483c);
+          dim(root, SCENE_ID === 'zhuhai' ? 1.0 : 0.88);
+          if (SCENE_ID === 'zhuhai') {
+            // 画缘那两株正好逆光（主光在左前上），纯漫反射会读成枯枝剪影；
+            // 给一点青绿自发光当"月光透叶"，保住近景竹的辨识度。
+            root.traverse((o) => {
+              const mesh = o as THREE.Mesh;
+              if (!mesh.isMesh) return;
+              const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+              for (const m of mats) {
+                const mm = m as THREE.MeshStandardMaterial;
+                if (mm.emissive) {
+                  mm.emissive.set(0x243d2a);
+                  mm.emissiveIntensity = 0.55;
+                }
+              }
+            });
+          }
+        } else if (p.id === 'bamboo-grove') {
+          // 近景整丛竹：克隆材质后乘青绿色；亮度略高于远景竹墙，拉开"近-中-远"三层
+          cloneMaterials(root);
+          tintCold(root, 0x5d7a5a);
+          dim(root, 0.95);
+        } else if (SCENE_ID === 'zhuhai' && p.id === 'gate-stone') {
+          // 山门退到雾里：压暗一档，不与前景石板/石阶抢亮度，读作"径尽头的一道门"
+          dim(root, 0.86);
         } else if (p.id === 'stone-lamp-tall' || p.id === 'water-vat') {
           // v2.4.0：后景第二层件统一压暗到 0.85，降低左右缘背景层的视觉重量
-          dim(root, 0.85);
+          dim(root, SCENE_ID === 'zhuhai' ? 0.92 : 0.85);
         }
         arena.decorGroup.add(root);
         rec.root = root;

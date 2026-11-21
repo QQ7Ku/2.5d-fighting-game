@@ -13,7 +13,7 @@
       rel="icon"
       href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c8452f'/%3E%3Ctext x='16' y='24' font-size='21' text-anchor='middle' fill='%23efe6d4' font-family='serif'%3E%E9%9C%9C%3C/text%3E%3C/svg%3E"
     />
-    <title>瓦上霜 v2.4.9</title>
+    <title>瓦上霜 v2.5.0</title>
   </head>
   <body>
     <div id="app">
@@ -81,8 +81,16 @@
       <!-- ===== 主菜单 ===== -->
       <div id="overlay-menu" class="overlay hidden">
         <div class="menu-inner">
-          <h1 class="title">瓦上霜<span class="ver">v2.4.9</span></h1>
-          <p class="subtitle">霜庭 · 双人对招</p>
+          <h1 class="title">瓦上霜<span class="ver">v2.5.0</span></h1>
+          <p class="subtitle" id="menu-subtitle">霜庭 · 双人对招</p>
+
+          <div class="menu-group">
+            <div class="group-label">场景</div>
+            <div class="seg" id="scene-seg">
+              <button class="seg-btn active" data-scene="shuangting">霜庭</button>
+              <button class="seg-btn" data-scene="zhuhai">竹海古径</button>
+            </div>
+          </div>
 
           <div class="menu-group">
             <div class="group-label">对战模式</div>

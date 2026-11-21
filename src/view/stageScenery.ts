@@ -9,11 +9,12 @@
  * - 全部挂在 arena.sceneryGroup，不进 props/specs/破坏链；单件 404 静默降级（占位盒保留淡剪影）。
  */
 import * as THREE from 'three';
-import decor from '../../scene/output/decor.json';
+import { sceneData as decor } from '../scene/sceneData';
 import { wrapGLBProp, template } from './glbProps';
 import { makeSkyDomeTexture, buildRidgePlane } from './skyBackdrop';
 import { mulberry32, hashString } from '../core/math';
 import type { Arena } from './arena';
+import { SCENE_ID } from '../scene/sceneData';
 
 interface ScnBox { id: string; model: string; x: number; y: number; z: number; w: number; h: number; d: number; }
 
@@ -25,7 +26,7 @@ interface ScnBox { id: string; model: string; x: number; y: number; z: number; w
 // 占位盒只决定 GLB 缩放与落点（wrapGLBProp 按局部盒测量后逐轴对齐），仅移动坐标不触发重新生成。
 // v2.0.9.1：山体收窄加厚立体化（w 收窄、h≤8、d=3 出峰形），殿宇缩小让位牌坊，
 // 石台基前移至牌坊正后 (z=-3.8) 作台基，竹林推远至 x=±13 两翼。
-const SCENERY: ScnBox[] = [
+const SHUANGTING_SCENERY: ScnBox[] = [
   { id: 'mountain-far',  model: 'mountain-far',  x: 0,  y: 2.2, z: -24, w: 56, h: 7,   d: 3 },
   { id: 'mountain-mid',  model: 'mountain-mid',  x: 0,  y: 2.0, z: -19, w: 48, h: 7.5, d: 3 },
   { id: 'mountain-near', model: 'mountain-near', x: 0,  y: 1.8, z: -14, w: 40, h: 8,   d: 3 },
@@ -37,6 +38,27 @@ const SCENERY: ScnBox[] = [
   { id: 'bamboo-L',      model: 'bamboo-grove',  x: -13, y: 1.6, z: -10, w: 8,  h: 5,  d: 8 },
   { id: 'bamboo-R',      model: 'bamboo-grove',  x: 13,  y: 1.6, z: -10, w: 8,  h: 5,  d: 8 },
 ];
+
+/**
+ * 竹海古径（zhuhai）风景天幕（v2.5.0 / Round 32）
+ * 同样是 7 件（scenery 7/7 基线不变），但职能换了：
+ *   - 三层雪岭保留（远山是「古径通向云外」的必要纵深）；
+ *   - 殿宇退到 z=-19 并被雾吞掉，只留一点檐影，读作「山尽头有寺」；
+ *   - 台基前移到 z=-3.6 当古道尽头的石台；
+ *   - 竹林天幕由两侧 ±13 收到 ±8.3 并加高到 7m，读作夹道密竹，而不是远处一条竹林带。
+ */
+const ZHUHAI_SCENERY: ScnBox[] = [
+  { id: 'mountain-far',  model: 'mountain-far',  x: 0,  y: 2.2, z: -24, w: 56, h: 7,   d: 3 },
+  { id: 'mountain-mid',  model: 'mountain-mid',  x: 0,  y: 2.0, z: -19, w: 48, h: 7.5, d: 3 },
+  { id: 'mountain-near', model: 'mountain-near', x: 0,  y: 1.8, z: -14, w: 40, h: 8,   d: 3 },
+  { id: 'temple-hall',   model: 'temple-hall',   x: 0,  y: 2.1, z: -19, w: 7.6, h: 5.6, d: 6 },
+  { id: 'stone-terrace', model: 'stone-terrace', x: 0,  y: -0.2, z: -3.6, w: 9, h: 1.4, d: 2.5 },
+  { id: 'bamboo-L',      model: 'bamboo-grove',  x: -8.3, y: 1.8, z: -8.6, w: 7, h: 7, d: 5.5 },
+  { id: 'bamboo-R',      model: 'bamboo-grove',  x: 8.3,  y: 1.8, z: -8.6, w: 7, h: 7, d: 5.5 },
+];
+
+/** 当前场景的风景件表 */
+const SCENERY: ScnBox[] = SCENE_ID === 'zhuhai' ? ZHUHAI_SCENERY : SHUANGTING_SCENERY;
 
 let clouds: THREE.Sprite[] = [];
 let mist: THREE.Mesh[] = [];
@@ -197,7 +219,7 @@ export function mountStageScenery(arena: Arena): void {
     const farTint = s.model.startsWith('mountain')
       ? 0x46525f
       : s.model === 'temple-hall'
-        ? 0x5c6774
+        ? (SCENE_ID === 'zhuhai' ? 0x7d9282 : 0x5c6774)
         : s.model === 'bamboo-grove'
           ? 0x2f3e34
           : null;

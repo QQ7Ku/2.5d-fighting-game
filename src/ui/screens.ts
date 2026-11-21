@@ -7,6 +7,7 @@ import { audio } from '../core/audio';
 import type { TouchControls } from './touch';
 import type { Difficulty } from '../game/ai';
 import type { MatchMode } from '../game/match';
+import { SCENE_ID, SCENES, switchScene } from '../scene/sceneData';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 
@@ -33,6 +34,7 @@ export class Screens {
   private difficultyGroup = $('difficulty-group');
 
   constructor(private touch: TouchControls) {
+    this.bindScene();
     this.bindMenu();
     this.bindSettings();
     this.bindHelp();
@@ -40,6 +42,25 @@ export class Screens {
     bus.on('ui:toast', ({ text, ms }) => this.toast(text, ms));
     this.bindPause();
     this.bindRotate();
+  }
+
+  /** 场景选择：只读 URL 参数，点选后整页重载（场景数据在模块初始化时固定） */
+  private bindScene(): void {
+    const group = document.getElementById('scene-seg');
+    if (!group) return;
+    group.querySelectorAll<HTMLElement>('.seg-btn').forEach((b) => {
+      b.classList.toggle('active', b.dataset.scene === SCENE_ID);
+    });
+    const sub = document.getElementById('menu-subtitle');
+    if (sub) sub.textContent = `${SCENES[SCENE_ID].name} · 双人对招`;
+    group.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>('.seg-btn');
+      if (!btn) return;
+      const id = btn.dataset.scene as keyof typeof SCENES | undefined;
+      if (!id || id === SCENE_ID) return;
+      bus.emit('sfx:play', { tag: 'ui_click', gain: 0.6 });
+      switchScene(id);
+    });
   }
 
   private bindMenu(): void {

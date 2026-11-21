@@ -7,7 +7,7 @@
 
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import decor from '../../scene/output/decor.json';
+import { sceneData as decor, SCENE_ID } from '../scene/sceneData';
 import type { Tier, Budget } from '../core/perf';
 import { mulberry32, hashString } from '../core/math';
 import { wrapGLBProp, DECOR_DESTROY_MODELS } from './glbProps';
@@ -594,8 +594,10 @@ export class Arena {
     // 三段共享同一 mat/tex；每段 BoxGeometry 顶面 UV 为 0..1，配合 repeat(1,2)：
     // 纹理内 2×2 块石板 → 单块约 1.75~2.35 世界单位，近方形、不拉成细条。
     const { map, roughnessMap } = makeStoneFloorTextures(hashString('floor'));
+    // v2.5.0（竹海古径）：同一套石板纹理乘一层薄苔色（浅灰绿），与霜庭的冷蓝石板区分场景，
+    // 不换贴图、不改几何，破坏/塌陷与碰撞完全沿用。
     const mat = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
+      color: SCENE_ID === 'zhuhai' ? 0xd3dcc6 : 0xffffff,
       map,
       roughnessMap,
       roughness: 0.94,
@@ -615,7 +617,11 @@ export class Arena {
     }
 
     // 前沿石阶：同步冷灰调，避免暖棕块与霜夜石板产生明显色差
-    const stepMat = new THREE.MeshStandardMaterial({ color: 0x565c66, roughness: 0.92, metalness: 0 });
+    const stepMat = new THREE.MeshStandardMaterial({
+      color: SCENE_ID === 'zhuhai' ? 0x5b6352 : 0x565c66,
+      roughness: 0.92,
+      metalness: 0,
+    });
     const step = new THREE.Mesh(new THREE.BoxGeometry(D.manual.arena.width + 1.2, 0.3, 0.9), stepMat);
     step.position.set(0, -0.45, 2.15);
     step.receiveShadow = true;

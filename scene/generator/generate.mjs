@@ -17,7 +17,25 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '../..');
-const paramsPath = join(ROOT, 'scene/params/shuangting.json');
+
+/**
+ * 多场景（v2.5.0 / Round 32）：
+ *   node scene/generator/generate.mjs                  → shuangting（保持原路径与文件名，门禁 hash 不变）
+ *   node scene/generator/generate.mjs --scene=zhuhai   → scene/output/zhuhai.json
+ * 未指定 --scene 时行为与旧版逐字节一致（产物仍写 decor.json / generation-record.json）。
+ */
+const sceneArg = (() => {
+  const eq = process.argv.find((a) => a.startsWith('--scene='));
+  if (eq) return eq.slice('--scene='.length);
+  const i = process.argv.indexOf('--scene');
+  if (i >= 0 && process.argv[i + 1]) return process.argv[i + 1];
+  return 'shuangting';
+})();
+const paramsRel = `scene/params/${sceneArg}.json`;
+const paramsPath = join(ROOT, paramsRel);
+const isDefault = sceneArg === 'shuangting';
+const outDecor = join(ROOT, isDefault ? 'scene/output/decor.json' : `scene/output/${sceneArg}.json`);
+const outRecord = join(ROOT, isDefault ? 'scene/output/generation-record.json' : `scene/output/generation-record-${sceneArg}.json`);
 const paramsText = readFileSync(paramsPath, 'utf8');
 const P = JSON.parse(paramsText);
 
@@ -179,7 +197,7 @@ const outputs = {
   displayName: P.displayName,
   version: P.version,
   seed: P.seed,
-  generator: { name: 'scene-gen', version: P.generatorVersion, paramsFile: 'scene/params/shuangting.json' },
+  generator: { name: 'scene-gen', version: P.generatorVersion, paramsFile: paramsRel },
   paramsHash: 'sha256:' + createHash('sha256').update(paramsText, 'utf8').digest('hex'),
   generatedAt: new Date().toISOString().slice(0, 19) + '+08:00',
   palette: pal,
@@ -213,7 +231,7 @@ const outputs = {
 };
 
 mkdirSync(join(ROOT, 'scene/output'), { recursive: true });
-writeFileSync(join(ROOT, 'scene/output/decor.json'), JSON.stringify(outputs, null, 2) + '\n', 'utf8');
+writeFileSync(outDecor, JSON.stringify(outputs, null, 2) + '\n', 'utf8');
 
 const record = {
   recordId: `scene-gen-${P.seed}`,
@@ -229,12 +247,12 @@ const record = {
     lanterns: lanterns.length,
     leaves: leaves.length,
   },
-  reproduce: 'node scene/generator/generate.mjs',
+  reproduce: isDefault ? 'node scene/generator/generate.mjs' : `node scene/generator/generate.mjs --scene=${sceneArg}`,
   validation: outputs.validation,
 };
-writeFileSync(join(ROOT, 'scene/output/generation-record.json'), JSON.stringify(record, null, 2) + '\n');
+writeFileSync(outRecord, JSON.stringify(record, null, 2) + '\n');
 
-console.log(`scene-gen ${P.generatorVersion} · seed ${P.seed}`);
+console.log(`scene-gen ${P.generatorVersion} · ${P.sceneId} · seed ${P.seed}`);
 console.log(
   `  山脊 ${ridges.length} 层 / 树影 ${foliage.length} / 贴花 ${groundPatches.length} / 灯笼 ${lanterns.length} / 落叶 ${leaves.length}`
 );

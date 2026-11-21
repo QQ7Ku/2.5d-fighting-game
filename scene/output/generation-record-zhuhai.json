@@ -1,0 +1,26 @@
+{
+  "recordId": "scene-gen-20261116",
+  "sceneId": "zhuhai",
+  "seed": 20261116,
+  "generatorVersion": "scene-gen/1.0.0",
+  "paramsHash": "sha256:ad78c62c42252f0eadf96b70a45b037310dafd2200a69afa1d2fe816600d401c",
+  "outputsHash": "sha256:840ac6e89f9fd3116d2e943392befa1779d2ce7aa3e9265f301f57df5fe60077",
+  "counts": {
+    "ridges": 3,
+    "foliage": 26,
+    "groundPatches": 34,
+    "lanterns": 3,
+    "leaves": 64
+  },
+  "reproduce": "node scene/generator/generate.mjs --scene=zhuhai",
+  "validation": {
+    "passed": true,
+    "violations": [],
+    "checks": [
+      "装饰不进入核心战斗区",
+      "装饰不遮挡判定框通道",
+      "地面贴花透明度 < 0.45 保证可读性",
+      "manual 段未被修改（只读复制）"
+    ]
+  }
+}
